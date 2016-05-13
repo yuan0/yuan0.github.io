@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.new_p{
+    list-style-type: none;
+    color: cadetblue;
+}
+.new_a{
+    list-style-type: none;
+    color: firebrick;
+}
+.new_a:hover{
+    color: yellowgreen;
+}
