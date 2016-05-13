@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p{
+    margin-top: 20px;
+    margin-left: 20px;
+    color: cadetblue;
+}
+.p_0{
+    color: firebrick;
+}
+.p_1{
+    color: lightsalmon;
+}

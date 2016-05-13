@@ -2,14 +2,11 @@
     margin: 0;
     padding: 0;
 }
-.new_p{
-    list-style-type: none;
+.p_0{
     color: cadetblue;
+    font-family: "微软雅黑";
 }
-.new_a{
-    list-style-type: none;
-    color: firebrick;
-}
-.new_a:hover{
-    color: yellowgreen;
+.p_1{
+    color: indianred;
+    font-family: "微软雅黑";
 }

@@ -2,12 +2,31 @@
 
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>
         demos | Hello :)
     </title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <meta http-equiv="refresh" content="5;url=test/test.html">
+    <!--停留5秒后自动转到test.html-->
 </head>
 <body>
+<script type="text/javascript" language="javascript">
+    window.onload = function () {
 
+        var i = 5;
+        var intervalid = setInterval(function () {
+            if (i == 0) {
+                clearInterval(intervalid);
+            }
+            document.getElementById("count_down").innerHTML = i.toString()+" 后跳转hexo内置html页面...";
+            i--;
+        }, 1000);
+
+    }
+</script>
+<p>This is a test page.</p>
+<p class="p_0">这个页面不使用hexo主题</p>
+<p id="count_down" class="p_1"></p>
 </body>
 </html>
