@@ -7,7 +7,7 @@
         demos | Hello :)
     </title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <meta http-equiv="refresh" content="5;url=test/test.html">
+    <!--<meta http-equiv="refresh" content="5;url=test/test.html">-->
     <!--停留5秒后自动转到test.html-->
 </head>
 <body>
@@ -18,6 +18,7 @@
         var intervalid = setInterval(function () {
             if (i == 0) {
                 clearInterval(intervalid);
+                window.location.href="test/test.html";
             }
             document.getElementById("count_down").innerHTML = i.toString()+" 后跳转hexo内置html页面...";
             i--;
