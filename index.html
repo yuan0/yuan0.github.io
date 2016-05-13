@@ -325,14 +325,12 @@
 
       
         
-          
-            <h2 id="hexo创建无模板的静态html"><a href="#hexo创建无模板的静态html" class="headerlink" title="hexo创建无模板的静态html"></a>hexo创建无模板的静态html</h2><h3 id="首先要了解，hexo是把source文件夹的所有需要渲染的文件-md文件-通过渲染机制转换成html文件，保存在public目录下"><a href="#首先要了解，hexo是把source文件夹的所有需要渲染的文件-md文件-通过渲染机制转换成html文件，保存在public目录下" class="headerlink" title="首先要了解，hexo是把source文件夹的所有需要渲染的文件(.md文件)通过渲染机制转换成html文件，保存在public目录下"></a>首先要了解，hexo是把source文件夹的所有需要渲染的文件(.md文件)通过渲染机制转换成html文件，保存在public目录下</h3><h3 id="在-source-文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面"><a href="#在-source-文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面" class="headerlink" title="在 /source 文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面"></a>在 /source 文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"demos"</span></span><br></pre></td></tr></table></figure>
-<h3 id="将自动生成一个index-md文件，可以不理会，因为要设置跳过渲染"><a href="#将自动生成一个index-md文件，可以不理会，因为要设置跳过渲染" class="headerlink" title="将自动生成一个index.md文件，可以不理会，因为要设置跳过渲染"></a>将自动生成一个index.md文件，可以不理会，因为要设置跳过渲染</h3><h3 id="config-yml中有skip-render属性，可以设置静态html和md文件跳过渲染"><a href="#config-yml中有skip-render属性，可以设置静态html和md文件跳过渲染" class="headerlink" title="_config.yml中有skip_render属性，可以设置静态html和md文件跳过渲染"></a>_config.yml中有skip_render属性，可以设置静态html和md文件跳过渲染</h3><h3 id="config-yml中找到skip-render"><a href="#config-yml中找到skip-render" class="headerlink" title="_config.yml中找到skip_render"></a>_config.yml中找到skip_render</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip_render: demos/*;</span><br></pre></td></tr></table></figure>
-<h3 id="本地测试一下"><a href="#本地测试一下" class="headerlink" title="本地测试一下"></a>本地测试一下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<h3 id="然后在local-4000查看"><a href="#然后在local-4000查看" class="headerlink" title="然后在local:4000查看"></a>然后在local:4000查看</h3><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-          
+          <h2 id="hexo创建无模板的静态html"><a href="#hexo创建无模板的静态html" class="headerlink" title="hexo创建无模板的静态html"></a>hexo创建无模板的静态html</h2><h3 id="首先要了解，hexo是把source文件夹的所有需要渲染的文件-md文件-通过渲染机制转换成html文件，保存在public目录下"><a href="#首先要了解，hexo是把source文件夹的所有需要渲染的文件-md文件-通过渲染机制转换成html文件，保存在public目录下" class="headerlink" title="首先要了解，hexo是把source文件夹的所有需要渲染的文件(.md文件)通过渲染机制转换成html文件，保存在public目录下"></a>首先要了解，hexo是把source文件夹的所有需要渲染的文件(.md文件)通过渲染机制转换成html文件，保存在public目录下</h3><h4 id="在-source-文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面"><a href="#在-source-文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面" class="headerlink" title="在 /source 文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面"></a>在 /source 文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"demos"</span></span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/12/statichtml/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
