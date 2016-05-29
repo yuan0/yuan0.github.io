@@ -84,18 +84,45 @@
 
 
 
-<meta name="description" content="嵌入式系统概述历史懒得写，想知道自己去搜">
+<meta name="description" content="ARM体系结构简介ARM微处理器内部结构
+知识产权核(IP CORE)——完成指令的取指、译码和执行
+寄存器
+MMU(Memory Management Unit;内存管理单元)
+异常管理系统
+指令
+cache系统
+
+
+接口控制器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="嵌入式系统与开发(零)">
-<meta property="og:url" content="http://yoursite.com/2016/05/26/Embedded_System/index.html">
+<meta property="og:title" content="嵌入式系统与开发(一)">
+<meta property="og:url" content="http://yoursite.com/2016/05/29/Embedded_System_1/index.html">
 <meta property="og:site_name" content="Hello :)">
-<meta property="og:description" content="嵌入式系统概述历史懒得写，想知道自己去搜">
-<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/flow_chart_0.png">
-<meta property="og:updated_time" content="2016-05-26T14:39:47.725Z">
+<meta property="og:description" content="ARM体系结构简介ARM微处理器内部结构
+知识产权核(IP CORE)——完成指令的取指、译码和执行
+寄存器
+MMU(Memory Management Unit;内存管理单元)
+异常管理系统
+指令
+cache系统
+
+
+接口控制器">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/CPSR_SPSR.png">
+<meta property="og:updated_time" content="2016-05-29T13:19:40.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="嵌入式系统与开发(零)">
-<meta name="twitter:description" content="嵌入式系统概述历史懒得写，想知道自己去搜">
-<meta name="twitter:image" content="http://o6yn3s5sy.bkt.clouddn.com/flow_chart_0.png">
+<meta name="twitter:title" content="嵌入式系统与开发(一)">
+<meta name="twitter:description" content="ARM体系结构简介ARM微处理器内部结构
+知识产权核(IP CORE)——完成指令的取指、译码和执行
+寄存器
+MMU(Memory Management Unit;内存管理单元)
+异常管理系统
+指令
+cache系统
+
+
+接口控制器">
+<meta name="twitter:image" content="http://o6yn3s5sy.bkt.clouddn.com/CPSR_SPSR.png">
 
 
 
@@ -113,7 +140,7 @@
   };
 </script>
 
-  <title> 嵌入式系统与开发(零) | Hello :) </title>
+  <title> 嵌入式系统与开发(一) | Hello :) </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +290,7 @@
             
             
               
-                嵌入式系统与开发(零)
+                嵌入式系统与开发(一)
               
             
           </h1>
@@ -275,8 +302,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-26T22:16:34+08:00" content="2016-05-26">
-              2016-05-26
+            <time itemprop="dateCreated" datetime="2016-05-29T21:18:34+08:00" content="2016-05-29">
+              2016-05-29
             </time>
           </span>
 
@@ -322,67 +349,99 @@
       
 
       
-        <h2 id="嵌入式系统"><a href="#嵌入式系统" class="headerlink" title="嵌入式系统"></a>嵌入式系统</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h4 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h4><p>懒得写，想知道自己去搜</p>
+        <h1 id="ARM体系结构"><a href="#ARM体系结构" class="headerlink" title="ARM体系结构"></a>ARM体系结构</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="ARM微处理器内部结构"><a href="#ARM微处理器内部结构" class="headerlink" title="ARM微处理器内部结构"></a>ARM微处理器内部结构</h3><ul>
+<li>知识产权核(IP CORE)——完成指令的取指、译码和执行<ul>
+<li>寄存器</li>
+<li>MMU(Memory Management Unit;内存管理单元)</li>
+<li>异常管理系统</li>
+<li>指令</li>
+<li>cache系统</li>
+</ul>
+</li>
+<li>接口控制器</li>
+</ul>
 <a id="more"></a>
-<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><blockquote>
-<p>IEEE定义：Devices used to control, monitor, or assist the operation of equipment, machinery or plants.<br>国内定义：以<strong>应用</strong>为中心，以<strong>计算机技术</strong>为基础，软硬件<strong>可裁剪</strong>，适应应用系统对<strong>功能</strong>、<strong>可靠性</strong>、<strong>成本</strong>、<strong>体积</strong>、<strong>功耗</strong>严格要求的专用计算机系统</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><blockquote>
+<p>体积小、功耗低、成本低、高性能<br>支持Thumb(16位)/ARM(32/64位)双指令集，兼容8位和16位器件<br>具有大量寄存器，因而指令执行速度快<br>绝大多数操作都在寄存器中进行，通过Load/Store的体系架构在内存和寄存器之间传递数据<br>寻址方式简单<br>采用固定长度的指令格式</p>
 </blockquote>
-<h4 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h4><p>航天、军事、信息家电…不具体说了</p>
-<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
-<li>微内核</li>
-<li>专用性强</li>
-<li>可裁剪</li>
-<li>专用操作系统的支撑</li>
-<li>专用的开发工具和环境</li>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ul>
+<li>无线通讯：手机</li>
+<li>蓝牙技术</li>
+<li>网络：ADSL(Asymmetric Digital Subscriber Line;非对称数字用户线路)技术</li>
+<li>电子产品:数字音频、数字机顶盒、游戏机</li>
+<li>信息家电：数码相机、打印机、车载娱乐</li>
 </ul>
 <hr>
-<h2 id="嵌入式系统组成"><a href="#嵌入式系统组成" class="headerlink" title="嵌入式系统组成"></a>嵌入式系统组成</h2><h3 id="典型嵌入式系统架构"><a href="#典型嵌入式系统架构" class="headerlink" title="典型嵌入式系统架构"></a>典型嵌入式系统架构</h3><p>包含：微处理器、存储单元、接口单元、软件单元（至少包含嵌入式操作系统和应用程序）</p>
-<h3 id="典型嵌入式微处理器"><a href="#典型嵌入式微处理器" class="headerlink" title="典型嵌入式微处理器"></a>典型嵌入式微处理器</h3><h4 id="·嵌入式微控制器-MCU-Microcontroller-Unit-——单片机"><a href="#·嵌入式微控制器-MCU-Microcontroller-Unit-——单片机" class="headerlink" title="·嵌入式微控制器(MCU;Microcontroller Unit)——单片机"></a>·嵌入式微控制器(MCU;Microcontroller Unit)——单片机</h4><p>单片化，体积小，功耗和成本低，可靠性高。</p>
-<h4 id="·嵌入式微处理器-MPU-Microprocessor-Unit"><a href="#·嵌入式微处理器-MPU-Microprocessor-Unit" class="headerlink" title="·嵌入式微处理器(MPU;Microprocessor Unit)"></a>·嵌入式微处理器(MPU;Microprocessor Unit)</h4><p><del>在这之前，我只知道Intel Σ( ° △ °|||)︴</del></p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>特点</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ARM(Advanced RISC Machine)微处理器</td>
-<td>小体积、高性能、低成本、低功耗；16/32/64位双指令集</td>
-<td>移动处理器的老大</td>
-</tr>
-<tr>
-<td>MIPS(Microprocessor without interlocked piped stages)</td>
-<td>架构简洁，运算速度较快</td>
-<td>广泛用于宽带接入、路由器、调制解调器、游戏机等领域</td>
-</tr>
-<tr>
-<td>68K/Cold Fire</td>
-<td>基于RISC结构</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Power PC</td>
-<td>—</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<p><em>注：RISC——Reduced Instruction Set Computer</em></p>
-<h4 id="·嵌入式DSP处理器-EDSP-Embedded-Digital-Signal-Processor"><a href="#·嵌入式DSP处理器-EDSP-Embedded-Digital-Signal-Processor" class="headerlink" title="·嵌入式DSP处理器(EDSP;Embedded Digital Signal Processor)"></a>·嵌入式DSP处理器(EDSP;Embedded Digital Signal Processor)</h4><h4 id="·嵌入式片上系统-SOC-System-On-Chip"><a href="#·嵌入式片上系统-SOC-System-On-Chip" class="headerlink" title="·嵌入式片上系统(SOC;System On Chip)"></a>·嵌入式片上系统(SOC;System On Chip)</h4><h3 id="常用的嵌入式操作系统"><a href="#常用的嵌入式操作系统" class="headerlink" title="常用的嵌入式操作系统"></a>常用的嵌入式操作系统</h3><ul>
-<li>VxWorks</li>
-<li>RT-Linux</li>
-<li>uClinux</li>
-<li>ARM-linux</li>
-<li>Windows Phone</li>
-<li>iOS</li>
-<li>Android</li>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="运行模式"><a href="#运行模式" class="headerlink" title="运行模式"></a>运行模式</h3><ul>
+<li>用户模式(User,usr)</li>
+<li>快速中断模式(FIQ,fiq)</li>
+<li>外部中断模式(IRQ,irq)</li>
+<li>特权模式(Supervisor,sve)</li>
+<li>数据访问终止模式(Abort,abt)</li>
+<li>未定义指令终止模式(Undefined,und)</li>
+<li>系统模式(System,sys)</li>
 </ul>
-<hr>
-<h2 id="嵌入式系统开发设计"><a href="#嵌入式系统开发设计" class="headerlink" title="嵌入式系统开发设计"></a>嵌入式系统开发设计</h2><h3 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h3><p><img src="http://o6yn3s5sy.bkt.clouddn.com/flow_chart_0.png" alt="image"></p>
-<h3 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h3><p>· native模式<br>· 宿主机(HOST)–目标板(TARGET)模式</p>
+<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><p>ARM处理器共有37个32位寄存器：31个通用寄存器+6个状态寄存器<br>ARM处理器运行在每一种模式下时，都会使用属于自己的一组寄存器，通常包括15个通用寄存器(R0~R14)、一个或两个状态寄存器及程序计数器(PC)</p>
+<ul>
+<li><p>通用寄存器</p>
+<ul>
+<li>R0~R7:所有模式共用</li>
+<li><p>R8~R14:备份寄存器</p>
+<ul>
+<li>R8~R12:每个寄存器对应2个不同的物理寄存器</li>
+<li><p>R13~R14:每个寄存器对应6个不同的物理寄存器</p>
+<ul>
+<li><p>R13通常用作堆栈指针，采用下面的记号来区分各个物理寄存器：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+<p>  <code>&lt;MODE&gt;</code>取值：usr、svc、abt、und、irq、fiq</p>
+</li>
+<li>R14的特殊作用：<ul>
+<li>用户模式下，用作链接寄存器(LR)，存放子程序被调用时的返回地址</li>
+<li>异常处理模式下，R14用来保存异常的返回地址</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>程序计数器(PC) R15</p>
+<ul>
+<li>PC的值为当前指令地址的值加8个字节，即指向当前指令的下两条指令的地址</li>
+</ul>
+</li>
+<li><p>程序状态寄存器——用来保存程序执行时的各种状态值<br>分为两种类型：CPSR和SPSR(格式相同)<br><img src="http://o6yn3s5sy.bkt.clouddn.com/CPSR_SPSR.png" alt="image"></p>
+</li>
+</ul>
+<h3 id="ARM异常中断处理"><a href="#ARM异常中断处理" class="headerlink" title="ARM异常中断处理"></a>ARM异常中断处理</h3><h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><ul>
+<li>复位</li>
+<li>未定义指令</li>
+<li>软件中断</li>
+<li>指令预取中止</li>
+<li>数据访问中止</li>
+<li>外部中断请求(IRQ)</li>
+<li>快速中断请求(FIQ)</li>
+</ul>
+<h4 id="异常处理过程"><a href="#异常处理过程" class="headerlink" title="异常处理过程"></a>异常处理过程</h4><p>1.响应<br>step1:将下一条指令的地址保存在相应的LR寄存器中<br>step2:将CPSR寄存器保存到相应的SPSR寄存器中<br>伪代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">R14_&lt;exception_mode&gt;=return link</span><br><span class="line">SPSR&lt;exception_mode&gt;=CPSR</span><br><span class="line">CPSR[4:0]=exception_mode:number</span><br><span class="line">CPSR[5]=0                           ;当运行于ARM工作状态时</span><br><span class="line">If&lt;exception_mode&gt;==reset or FIQ    ;当响应FIQ异常时，禁止新的FIQ异常</span><br><span class="line">THEN</span><br><span class="line">    [</span><br><span class="line">        CPSR[6]=1</span><br><span class="line">        CPSR[7]=1</span><br><span class="line">        PC=exception vector address</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+<p>2.返回</p>
+<ul>
+<li>拷贝SPSR_mode寄存器内容到CPSR</li>
+<li>将LR<em>mode寄存器内容(LR的值减去相应的偏移量)复制到程序计数器PC中
+</em>注：复位异常中断处理程序无需返回；如果进入异常处理程序时保存了部分通用寄存器的值，此时需要恢复这些被保存的通用寄存器的值_</li>
+</ul>
+<h4 id="异常优先级"><a href="#异常优先级" class="headerlink" title="异常优先级"></a>异常优先级</h4><p>高-&gt;低<br>复位&gt;数据中止&gt;FIQ&gt;IRQ&gt;预取指令中止&gt;未定义指令、SWI</p>
+<h3 id="ARM存储体系"><a href="#ARM存储体系" class="headerlink" title="ARM存储体系"></a>ARM存储体系</h3><h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ul>
+<li>字(word): 长度为32位，占4个字节</li>
+<li>半字(half-word): 长度为16位</li>
+<li>字节(byte): 长度为8位</li>
+</ul>
+<h4 id="存储空间"><a href="#存储空间" class="headerlink" title="存储空间"></a>存储空间</h4><p>ARM体系使用平板地址空间，该地址空间的大小为2^32个8位字节，即最大寻址空间为4GB。<br>首地址为0，0~3放置第一个存储的字数据，4~7字节放置第二个存储的字数据，依次排序。<br>存储字数据的方法有两种模式：</p>
+<ul>
+<li>大端模式: 数据的高字节存储在低地址中</li>
+<li>小端模式: 数据的高字节存储在高地址中</li>
+</ul>
 
       
     </div>
@@ -413,17 +472,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/14/ife_0/" rel="next" title="百度前端学习第一阶段成果">
-                <i class="fa fa-chevron-left"></i> 百度前端学习第一阶段成果
+              <a href="/2016/05/26/Embedded_System/" rel="next" title="嵌入式系统与开发(零)">
+                <i class="fa fa-chevron-left"></i> 嵌入式系统与开发(零)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/29/Embedded_System_1/" rel="prev" title="嵌入式系统与开发(一)">
-                嵌入式系统与开发(一) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -570,7 +625,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌入式系统"><span class="nav-number">1.</span> <span class="nav-text">嵌入式系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#历史"><span class="nav-number">1.1.1.</span> <span class="nav-text">历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.1.2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用领域"><span class="nav-number">1.1.3.</span> <span class="nav-text">应用领域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-number">1.1.4.</span> <span class="nav-text">特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌入式系统组成"><span class="nav-number">2.</span> <span class="nav-text">嵌入式系统组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型嵌入式系统架构"><span class="nav-number">2.1.</span> <span class="nav-text">典型嵌入式系统架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#典型嵌入式微处理器"><span class="nav-number">2.2.</span> <span class="nav-text">典型嵌入式微处理器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#·嵌入式微控制器-MCU-Microcontroller-Unit-——单片机"><span class="nav-number">2.2.1.</span> <span class="nav-text">·嵌入式微控制器(MCU;Microcontroller Unit)——单片机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#·嵌入式微处理器-MPU-Microprocessor-Unit"><span class="nav-number">2.2.2.</span> <span class="nav-text">·嵌入式微处理器(MPU;Microprocessor Unit)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#·嵌入式DSP处理器-EDSP-Embedded-Digital-Signal-Processor"><span class="nav-number">2.2.3.</span> <span class="nav-text">·嵌入式DSP处理器(EDSP;Embedded Digital Signal Processor)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#·嵌入式片上系统-SOC-System-On-Chip"><span class="nav-number">2.2.4.</span> <span class="nav-text">·嵌入式片上系统(SOC;System On Chip)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的嵌入式操作系统"><span class="nav-number">2.3.</span> <span class="nav-text">常用的嵌入式操作系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌入式系统开发设计"><span class="nav-number">3.</span> <span class="nav-text">嵌入式系统开发设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开发流程"><span class="nav-number">3.1.</span> <span class="nav-text">开发流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发模式"><span class="nav-number">3.2.</span> <span class="nav-text">开发模式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ARM体系结构"><span class="nav-number">1.</span> <span class="nav-text">ARM体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM微处理器内部结构"><span class="nav-number">1.1.1.</span> <span class="nav-text">ARM微处理器内部结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.1.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">1.1.3.</span> <span class="nav-text">应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型"><span class="nav-number">1.2.</span> <span class="nav-text">模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行模式"><span class="nav-number">1.2.1.</span> <span class="nav-text">运行模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#寄存器"><span class="nav-number">1.2.2.</span> <span class="nav-text">寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM异常中断处理"><span class="nav-number">1.2.3.</span> <span class="nav-text">ARM异常中断处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类型"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异常处理过程"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">异常处理过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异常优先级"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">异常优先级</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARM存储体系"><span class="nav-number">1.2.4.</span> <span class="nav-text">ARM存储体系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储空间"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">存储空间</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
