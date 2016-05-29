@@ -109,7 +109,7 @@ cache系统
 
 接口控制器">
 <meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/CPSR_SPSR.png">
-<meta property="og:updated_time" content="2016-05-29T13:19:40.563Z">
+<meta property="og:updated_time" content="2016-05-29T13:23:18.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嵌入式系统与开发(一)">
 <meta name="twitter:description" content="ARM体系结构简介ARM微处理器内部结构
@@ -392,10 +392,11 @@ cache系统
 <li><p>R13~R14:每个寄存器对应6个不同的物理寄存器</p>
 <ul>
 <li><p>R13通常用作堆栈指针，采用下面的记号来区分各个物理寄存器：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+<p>  <code>R13_&lt;MODE&gt;</code></p>
 <p>  <code>&lt;MODE&gt;</code>取值：usr、svc、abt、und、irq、fiq</p>
 </li>
-<li>R14的特殊作用：<ul>
+<li><p>R14的特殊作用：</p>
+<ul>
 <li>用户模式下，用作链接寄存器(LR)，存放子程序被调用时的返回地址</li>
 <li>异常处理模式下，R14用来保存异常的返回地址</li>
 </ul>
@@ -480,6 +481,10 @@ cache系统
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/05/29/Embedded_System_2/" rel="prev" title="嵌入式系统与开发(二)">
+                嵌入式系统与开发(二) <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -546,7 +551,7 @@ cache系统
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
