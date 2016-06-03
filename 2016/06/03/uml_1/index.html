@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="UML," />
 
 
 
@@ -84,16 +84,40 @@
 
 
 
-<meta name="description" content="hexo创建无模板的静态html首先要了解，hexo是把source文件夹的所有需要渲染的文件(.md文件)通过渲染机制转换成html文件，保存在public目录下在 /source 文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面1$ hexo new page &quot;demos&quot;">
+<meta name="description" content="Requirements management需求管理有4个阶段：
+
+Requirements gathering
+Requirements analysis and negotiation
+Requirements specification
+Requirements validation
+
+
+Requirements gatheringThe factors that make requir">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo创建无模板的静态html">
-<meta property="og:url" content="http://yoursite.com/2016/05/12/statichtml/index.html">
+<meta property="og:title" content="UML(1)">
+<meta property="og:url" content="http://yoursite.com/2016/06/03/uml_1/index.html">
 <meta property="og:site_name" content="Hello :)">
-<meta property="og:description" content="hexo创建无模板的静态html首先要了解，hexo是把source文件夹的所有需要渲染的文件(.md文件)通过渲染机制转换成html文件，保存在public目录下在 /source 文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面1$ hexo new page &quot;demos&quot;">
-<meta property="og:updated_time" content="2016-05-13T10:27:52.354Z">
+<meta property="og:description" content="Requirements management需求管理有4个阶段：
+
+Requirements gathering
+Requirements analysis and negotiation
+Requirements specification
+Requirements validation
+
+
+Requirements gatheringThe factors that make requir">
+<meta property="og:updated_time" content="2016-06-03T06:37:19.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo创建无模板的静态html">
-<meta name="twitter:description" content="hexo创建无模板的静态html首先要了解，hexo是把source文件夹的所有需要渲染的文件(.md文件)通过渲染机制转换成html文件，保存在public目录下在 /source 文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面1$ hexo new page &quot;demos&quot;">
+<meta name="twitter:title" content="UML(1)">
+<meta name="twitter:description" content="Requirements management需求管理有4个阶段：
+
+Requirements gathering
+Requirements analysis and negotiation
+Requirements specification
+Requirements validation
+
+
+Requirements gatheringThe factors that make requir">
 
 
 
@@ -111,7 +135,7 @@
   };
 </script>
 
-  <title> hexo创建无模板的静态html | Hello :) </title>
+  <title> UML(1) | Hello :) </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +285,7 @@
             
             
               
-                hexo创建无模板的静态html
+                UML(1)
               
             
           </h1>
@@ -273,8 +297,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-12T21:55:02+08:00" content="2016-05-12">
-              2016-05-12
+            <time itemprop="dateCreated" datetime="2016-06-03T14:36:12+08:00" content="2016-06-03">
+              2016-06-03
             </time>
           </span>
 
@@ -320,12 +344,43 @@
       
 
       
-        <h2 id="hexo创建无模板的静态html"><a href="#hexo创建无模板的静态html" class="headerlink" title="hexo创建无模板的静态html"></a>hexo创建无模板的静态html</h2><h3 id="首先要了解，hexo是把source文件夹的所有需要渲染的文件-md文件-通过渲染机制转换成html文件，保存在public目录下"><a href="#首先要了解，hexo是把source文件夹的所有需要渲染的文件-md文件-通过渲染机制转换成html文件，保存在public目录下" class="headerlink" title="首先要了解，hexo是把source文件夹的所有需要渲染的文件(.md文件)通过渲染机制转换成html文件，保存在public目录下"></a>首先要了解，hexo是把source文件夹的所有需要渲染的文件(.md文件)通过渲染机制转换成html文件，保存在public目录下</h3><h4 id="在-source-文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面"><a href="#在-source-文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面" class="headerlink" title="在 /source 文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面"></a>在 /source 文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"demos"</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h4 id="将自动生成一个index-md文件，可以不理会，因为要设置跳过渲染"><a href="#将自动生成一个index-md文件，可以不理会，因为要设置跳过渲染" class="headerlink" title="将自动生成一个index.md文件，可以不理会，因为要设置跳过渲染"></a>将自动生成一个index.md文件，可以不理会，因为要设置跳过渲染</h4><h3 id="config-yml中有skip-render属性，可以设置静态html和md文件跳过渲染"><a href="#config-yml中有skip-render属性，可以设置静态html和md文件跳过渲染" class="headerlink" title="_config.yml中有skip_render属性，可以设置静态html和md文件跳过渲染"></a>_config.yml中有skip_render属性，可以设置静态html和md文件跳过渲染</h3><h4 id="config-yml中找到skip-render"><a href="#config-yml中找到skip-render" class="headerlink" title="_config.yml中找到skip_render"></a>_config.yml中找到skip_render</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">skip_render:</span><br><span class="line">- demos/index.md;</span><br><span class="line">- demos/index.html;</span><br></pre></td></tr></table></figure>
-<h5 id="单个文件夹下全部文件：skip-render-demo"><a href="#单个文件夹下全部文件：skip-render-demo" class="headerlink" title="单个文件夹下全部文件：skip_render: demo/*"></a>单个文件夹下全部文件：skip_render: demo/*</h5><h5 id="单个文件夹下指定类型文件：skip-render-demo-html"><a href="#单个文件夹下指定类型文件：skip-render-demo-html" class="headerlink" title="单个文件夹下指定类型文件：skip_render: demo/*.html"></a>单个文件夹下指定类型文件：skip_render: demo/*.html</h5><h5 id="单个文件夹下全部文件以及子目录-skip-render-demo"><a href="#单个文件夹下全部文件以及子目录-skip-render-demo" class="headerlink" title="单个文件夹下全部文件以及子目录:skip_render: demo/**"></a>单个文件夹下全部文件以及子目录:skip_render: demo/**</h5><h5 id="多个文件夹以及各种复杂情况："><a href="#多个文件夹以及各种复杂情况：" class="headerlink" title="多个文件夹以及各种复杂情况："></a>多个文件夹以及各种复杂情况：</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">skip_render:</span><br><span class="line">- demos/*.html</span><br><span class="line">- demos/**</span><br></pre></td></tr></table></figure>
-<h3 id="重新部署-生成文件-测试"><a href="#重新部署-生成文件-测试" class="headerlink" title="重新部署 生成文件 测试"></a>重新部署 生成文件 测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-<h3 id="然后在local-4000查看"><a href="#然后在local-4000查看" class="headerlink" title="然后在local:4000查看"></a>然后在local:4000查看</h3><h4 id="查看示例-test"><a href="#查看示例-test" class="headerlink" title="查看示例 test"></a>查看示例 <a href="http://yuan0.github.io/demos/" title="Test" target="_blank" rel="external">test</a></h4>
+        <a id="more"></a>
+<h2 id="Requirements-management"><a href="#Requirements-management" class="headerlink" title="Requirements management"></a>Requirements management</h2><p>需求管理有4个阶段：</p>
+<ul>
+<li>Requirements gathering</li>
+<li>Requirements analysis and negotiation</li>
+<li>Requirements specification</li>
+<li>Requirements validation</li>
+</ul>
+<hr>
+<h3 id="Requirements-gathering"><a href="#Requirements-gathering" class="headerlink" title="Requirements gathering"></a>Requirements gathering</h3><p>The factors that make requirements gathering difficult are:</p>
+<ul>
+<li>Scope</li>
+<li>Requirements understanding</li>
+<li>Volatility 易变性</li>
+</ul>
+<p>The activities involved in gathering requirements are:</p>
+<ul>
+<li>Access the economic, technical, and operational feasibility for the proposed software system</li>
+<li>Indentify the stakeholders and end users who specify the requirements and jargon术语 that appear in the exisiting process</li>
+<li>Indentify the domain constraints that limit the working of the proposed software system</li>
+<li>Indentify the methods for requirement elicitation, such as the activities to interview stakeholders and hold team meetings between the development team and the stakeholders</li>
+<li>Indentify the ambiguous requirements that can be made clear using prototypes</li>
+<li>Indentify the expected requirements, which are the trivial requirements that stakeholders do not specify. (implicit requirements)</li>
+</ul>
+<hr>
+<h3 id="Requirements-analysis-and-negotiation"><a href="#Requirements-analysis-and-negotiation" class="headerlink" title="Requirements analysis and negotiation"></a>Requirements analysis and negotiation</h3><blockquote>
+<p>Requirements analysis is the process to categorize and organize requirements based on the documents produced in the requirements gathering activity.</p>
+</blockquote>
+<hr>
+<h3 id="Requirements-specification"><a href="#Requirements-specification" class="headerlink" title="Requirements specification"></a>Requirements specification</h3><blockquote>
+<p>Requirements specification is an activity that involves converting the requirements analyzed in the analysis phase into technical requirements that can be implemented.</p>
+</blockquote>
+<hr>
+<h3 id="Requirements-validation"><a href="#Requirements-validation" class="headerlink" title="Requirements validation"></a>Requirements validation</h3><blockquote>
+<p>Requirements validation is an activity that involves validating all the requirements after they are specified.</p>
+</blockquote>
+
       
     </div>
 
@@ -346,7 +401,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
+            <a href="/tags/UML/" rel="tag">#UML</a>
           
         </div>
       
@@ -355,17 +410,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/12/college_life_0/" rel="next" title="在大学（一）">
-                <i class="fa fa-chevron-left"></i> 在大学（一）
+              <a href="/2016/06/03/uml_0/" rel="next" title="UML(0)">
+                <i class="fa fa-chevron-left"></i> UML(0)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/13/college_life_1/" rel="prev" title="在大学（二）">
-                在大学（二） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,7 +563,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo创建无模板的静态html"><span class="nav-number">1.</span> <span class="nav-text">hexo创建无模板的静态html</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首先要了解，hexo是把source文件夹的所有需要渲染的文件-md文件-通过渲染机制转换成html文件，保存在public目录下"><span class="nav-number">1.1.</span> <span class="nav-text">首先要了解，hexo是把source文件夹的所有需要渲染的文件(.md文件)通过渲染机制转换成html文件，保存在public目录下</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在-source-文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面"><span class="nav-number">1.1.1.</span> <span class="nav-text">在 /source 文件夹下新建一个demo文件夹，可以存放不需要渲染的html页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将自动生成一个index-md文件，可以不理会，因为要设置跳过渲染"><span class="nav-number">1.1.2.</span> <span class="nav-text">将自动生成一个index.md文件，可以不理会，因为要设置跳过渲染</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#config-yml中有skip-render属性，可以设置静态html和md文件跳过渲染"><span class="nav-number">1.2.</span> <span class="nav-text">_config.yml中有skip_render属性，可以设置静态html和md文件跳过渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#config-yml中找到skip-render"><span class="nav-number">1.2.1.</span> <span class="nav-text">_config.yml中找到skip_render</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单个文件夹下全部文件：skip-render-demo"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">单个文件夹下全部文件：skip_render: demo/*</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#单个文件夹下指定类型文件：skip-render-demo-html"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">单个文件夹下指定类型文件：skip_render: demo/*.html</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#单个文件夹下全部文件以及子目录-skip-render-demo"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">单个文件夹下全部文件以及子目录:skip_render: demo/**</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多个文件夹以及各种复杂情况："><span class="nav-number">1.2.1.4.</span> <span class="nav-text">多个文件夹以及各种复杂情况：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新部署-生成文件-测试"><span class="nav-number">1.3.</span> <span class="nav-text">重新部署 生成文件 测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#然后在local-4000查看"><span class="nav-number">1.4.</span> <span class="nav-text">然后在local:4000查看</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看示例-test"><span class="nav-number">1.4.1.</span> <span class="nav-text">查看示例 test</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Requirements-management"><span class="nav-number">1.</span> <span class="nav-text">Requirements management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Requirements-gathering"><span class="nav-number">1.1.</span> <span class="nav-text">Requirements gathering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Requirements-analysis-and-negotiation"><span class="nav-number">1.2.</span> <span class="nav-text">Requirements analysis and negotiation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Requirements-specification"><span class="nav-number">1.3.</span> <span class="nav-text">Requirements specification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Requirements-validation"><span class="nav-number">1.4.</span> <span class="nav-text">Requirements validation</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
