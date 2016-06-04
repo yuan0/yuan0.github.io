@@ -1,0 +1,765 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="计算机网络," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="基本概念信息、数据与信号数据通信的目的是交换信息，数据是信息的载体，数据又是以信号的形式进行传输的。
+数据数据(data)——通常是指预先约定的具有某种含义的数字、符号和字母的组合。分类：
+
+模拟的(analogous)——连续变化的。
+数字的(digital)——取值是离散的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据通信基础">
+<meta property="og:url" content="http://yoursite.com/2016/06/04/physical_layer/index.html">
+<meta property="og:site_name" content="Hello :)">
+<meta property="og:description" content="基本概念信息、数据与信号数据通信的目的是交换信息，数据是信息的载体，数据又是以信号的形式进行传输的。
+数据数据(data)——通常是指预先约定的具有某种含义的数字、符号和字母的组合。分类：
+
+模拟的(analogous)——连续变化的。
+数字的(digital)——取值是离散的。">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/dataseq.png">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/dataseq1.png">
+<meta property="og:updated_time" content="2016-06-04T06:55:40.208Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据通信基础">
+<meta name="twitter:description" content="基本概念信息、数据与信号数据通信的目的是交换信息，数据是信息的载体，数据又是以信号的形式进行传输的。
+数据数据(data)——通常是指预先约定的具有某种含义的数字、符号和字母的组合。分类：
+
+模拟的(analogous)——连续变化的。
+数字的(digital)——取值是离散的。">
+<meta name="twitter:image" content="http://o6yn3s5sy.bkt.clouddn.com/dataseq.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 数据通信基础 | Hello :) </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hello :)</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">MDZZ</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demos">
+          <a href="/demos" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            演示
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                数据通信基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-04T14:55:22+08:00" content="2016-06-04">
+              2016-06-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="信息、数据与信号"><a href="#信息、数据与信号" class="headerlink" title="信息、数据与信号"></a>信息、数据与信号</h3><p>数据通信的目的是交换信息，数据是信息的载体，数据又是以信号的形式进行传输的。</p>
+<h4 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h4><p>数据(data)——通常是指预先约定的具有某种含义的数字、符号和字母的组合。<br>分类：</p>
+<ul>
+<li>模拟的(analogous)——连续变化的。</li>
+<li>数字的(digital)——取值是离散的。</li>
+</ul>
+<a id="more"></a>
+<h4 id="信号"><a href="#信号" class="headerlink" title="信号"></a>信号</h4><p>信号(signal)——数据在传输过程中的电磁波的表示形式。 </p>
+<h3 id="数据通信系统"><a href="#数据通信系统" class="headerlink" title="数据通信系统"></a>数据通信系统</h3><p>&lt;———— 发送部分 ————&gt;&lt;—– 传输部分 —&gt;&lt;————– 接收部分 ————–&gt;</p>
+<p>信源(源系统)—&gt;信号转换设备—&gt;传输介质(信道)—&gt;信号转换设备—&gt;信宿(目的系统)</p>
+<h4 id="信源和信宿"><a href="#信源和信宿" class="headerlink" title="信源和信宿"></a>信源和信宿</h4><p>信源就是信息的发送端，是发出待传送信息的设备；<br>信宿就是信息的接收端，是接收所传送信息的设备。</p>
+<h4 id="信道"><a href="#信道" class="headerlink" title="信道"></a>信道</h4><p>信道是通信双方以传输介质为基础的传输信息的通道，是建立在通信线路及其附属设备上的。</p>
+<h4 id="信号转换设备"><a href="#信号转换设备" class="headerlink" title="信号转换设备"></a>信号转换设备</h4><p>信号转换设备是将信源发出的信息转换成适合于在信道上传输的信号的设备。</p>
+<h3 id="传输媒体"><a href="#传输媒体" class="headerlink" title="传输媒体"></a>传输媒体</h3><h4 id="双绞线-twisted-pair-TP"><a href="#双绞线-twisted-pair-TP" class="headerlink" title="双绞线(twisted pair, TP)"></a>双绞线(twisted pair, TP)</h4><p>把两根互相绝缘的铜导线并排放置，再用规则的方法绞合起来。绞合的导线可以减少相邻线对的相互干扰。多对绞合导线构成了双绞线电缆。<br>双绞线可用于模拟传输和数字传输。<br>价格低，安装方便，但带宽窄，抗干扰性能较差。</p>
+<h4 id="同轴电缆"><a href="#同轴电缆" class="headerlink" title="同轴电缆"></a>同轴电缆</h4><p>同轴电缆由内导体铜质芯线（单股实心线或多股绞合线）、绝缘层、网状编织的外导体屏蔽层以及保护塑料外层组成。<br>由于外导体屏蔽层的作用，同轴电缆具有较好的抗干扰特性（特别是高频段），适合高速数据传输。<br>通常按特性阻抗数值不同，可分为两类：<br>50 Ω同轴电缆：数据通信中传输基带信号<br>75 Ω同轴电缆：模拟传输系统（CATV） </p>
+<h4 id="光缆"><a href="#光缆" class="headerlink" title="光缆"></a>光缆</h4><p>光纤(optical fiber)通常由非常透明的石英玻璃拉成细丝，主要由纤芯和包层构成。纤芯很细，直径为8－100um，且折射率较高，包层相对折射率较低。多根光纤构成光缆。<br>工作原理：光波利用光的全反射原理通过纤芯传导。通过传递光脉冲进行通信。<br>光纤通信衰耗小，距离长，抗干扰能力强，传输容量大，保密性好。</p>
+<h4 id="无线电波"><a href="#无线电波" class="headerlink" title="无线电波"></a>无线电波</h4><p>无线电波是一个广义的概念，从含义上讲，无线电波是全向传播，而微波是定向传播。<br>无线电波不同频段用于不同通信方式</p>
+<ul>
+<li>3  ~30  MHz，用于短波通信；</li>
+<li>30~300MHz，用于数据通信；</li>
+</ul>
+<p>此外，蜂窝无线电移动通信系统也得到了广泛的应用。</p>
+<h4 id="微波通信"><a href="#微波通信" class="headerlink" title="微波通信"></a>微波通信</h4><p>（2－40GHz，直线传播)</p>
+<ul>
+<li>地面接力微波：在地面建立若干微波中继站，中继站将前一站信号接收，放大后转发到下一站，实现“接力”式传输。<ul>
+<li>地面微波的工作频率范围一般为1～20 GHz，其特点是直线传播，因此只能在视距范围内进行传输。</li>
+</ul>
+</li>
+<li>卫星通信：将微波中继站放在卫星上实现。通信建立远，覆盖面积大。<ul>
+<li>卫星通信的最大特点是通信距离远，且通信费用与通信距离无关。</li>
+<li>只要地球赤道上空的同步轨道上，等距离地放置3颗相隔120度的卫星，就能基本上实现全球的通信。</li>
+</ul>
+</li>
+</ul>
+<h4 id="红外线"><a href="#红外线" class="headerlink" title="红外线"></a>红外线</h4><p>红外线链路只需一对收发器，可调制不相干的红外光，在视线距离的范围内传输，具有很强的方向性。</p>
+<h3 id="数据通信系统的技术指标"><a href="#数据通信系统的技术指标" class="headerlink" title="数据通信系统的技术指标"></a>数据通信系统的技术指标</h3><h4 id="数据传输速率"><a href="#数据传输速率" class="headerlink" title="数据传输速率"></a>数据传输速率</h4><p>1.传码速率：传码速率又称为调制速率、波特率，记作N<sub>Bd</sub>，是指在数据通信系统中，每秒钟传输信号码元的个数，单位是波特（Baud）。<br>若信号码元持续时间为T秒,则传码速率为1/T波特。</p>
+<p>2.传信速率：又称为比特率，记作R<sub>b</sub>，是指在数据通信系统中，每秒钟传输二进制码元的个数，单位是比特/秒（bit/s,或kbit/s或Mbit/s,bps,kbps,Mbps）。  </p>
+<p>3.若是二电平传输，则在一个信号码元中包含一个二进制码元，两者数值上相等。<br>若是多电平(M电平)传输，则两者在数值上满足：<br>– R<sub>b</sub> =  N<sub>Bd</sub>log<sub>2</sub> M</p>
+<h4 id="信道带宽"><a href="#信道带宽" class="headerlink" title="信道带宽"></a>信道带宽</h4><p>信号带宽：(bandwidth)是指信号具有的频带宽度，单位是赫Hz（或千赫kHz、兆赫MHz、吉赫GHz等）。</p>
+<ul>
+<li>模拟信道的带宽：表示通信线路允许通过的信号频带范围就称为线路带宽(通频带)。 </li>
+<li>数字信道的带宽：“带宽”是所能传送的“最高数据率”同义语，单位是“比特每秒”。</li>
+</ul>
+<h4 id="误码率和误组率"><a href="#误码率和误组率" class="headerlink" title="误码率和误组率"></a>误码率和误组率</h4><p>误码率：在一定时间内接收到出错的比特数e1与总的传输比特数e2之比。<br>– P<sub>e</sub>＝（e1/e2) ×100％<br>    由于实际的传输信道及通信设备存在随机差错与突发差错，而数据通信常采用数据块或帧为单位进行传输，使用误组率或误帧率则可以更好反映传输效率。<br>误组率：在一定时间内接收出错的组数b1与总的传输组数b2之比。<br>– P<sub>b</sub>＝（b1/b2) ×100％</p>
+<h4 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h4><p><code>总时延= 传播时延+发送时延+处理时延</code></p>
+<p>1.发送时延（传输时延 ）：发送数据时，数据块从结点进入到传输媒体所需要的时间。<br>信道带宽：数据在信道上的发送速率。常称为数据在信道上的传输速率。<br>– 发送时延 = 数据块长度(b)/信道带宽(bps)</p>
+<p>2.传播时延：电磁波在信道中需要传播一定的距离而花费的时间。<br>信号传输速率（即发送速率）和信号在信道上的传播速率是完全不同的概念。<br>– 传播时延 = 信道长度(m)/电磁波在信道上的传播速度(m/s)</p>
+<p>3.处理时延：交换结点为存储转发而进行一些必要的处理所花费的时间。<br>结点缓存队列中分组排队所经历的时延是处理时延中的重要组成部分。<br>处理时延的长短往往取决于网络中当时的通信量。<br>有时可用排队时延作为处理时延。</p>
+<hr>
+<h2 id="数据传输方式"><a href="#数据传输方式" class="headerlink" title="数据传输方式"></a>数据传输方式</h2><h3 id="并行传输与串行传输"><a href="#并行传输与串行传输" class="headerlink" title="并行传输与串行传输"></a>并行传输与串行传输</h3><p>1.并行传输指的是数据以成组的方式，在多条并行信道上同时进行传输。<br>2.串行传输指的是组成字符的若干位二进制码排列成数据流在一条信道上逐位顺序传输。</p>
+<h3 id="异步传输与同步传输"><a href="#异步传输与同步传输" class="headerlink" title="异步传输与同步传输"></a>异步传输与同步传输</h3><p>1.异步传输不论字符所采用的代码为多少位，在发送每一个字符代码（即字符的数据位）时，都要在前面加上一个起始位，表示一个字符的开始；后面加上一个停止位，表示一个字符的结束。<br>– 传输效率=字符的数据位/字符的总长度<br>2.同步传输方式要比异步传输复杂，它是以固定的时钟节拍来发送数据信号的，因此在一个串行数据流中，各信号码元之间的相对位置是固定的（即同步）。<br>在同步通信方式中，发送的数据一般以帧为单位，通常一帧数据中包含多个字符，在一帧数据的前后分别加上若干个同步字符和校验字段传输结束字符来表示一帧的开始和结束。<br>3.接收端为了从接收到的数据流中正确地区分一个个信号码元，必须具有与发送端<strong>一致</strong>的时钟信号。</p>
+<h3 id="单工、半双工与全双工传输"><a href="#单工、半双工与全双工传输" class="headerlink" title="单工、半双工与全双工传输"></a>单工、半双工与全双工传输</h3><p>1.单工传输——只能有一个方向的通信而没有反方向的交互。<br>2.半双工传输——通信的双方都可以发送信息，但不能双方同时发送(当然也就不能同时接收)。<br>3.全双工传输——通信的双方可以同时发送和接收信息。 </p>
+<h3 id="模拟传输与数字传输"><a href="#模拟传输与数字传输" class="headerlink" title="模拟传输与数字传输"></a>模拟传输与数字传输</h3><p>1.模拟信号：时间和幅度取值连续变化的信号量。<br>模拟信道：适于模拟信号传输的信道<br>模拟传输系统：传输模拟信号的通信系统<br>2.数字信号：时间和幅度取值离散 （不连续 变化）的信号量。<br>数字信道：适于数字信号传输的信道<br>数字传输系统：传输数字信号的通信系统</p>
+<hr>
+<h2 id="数据传送技术"><a href="#数据传送技术" class="headerlink" title="数据传送技术"></a>数据传送技术</h2><h3 id="数据序列的电信号表示"><a href="#数据序列的电信号表示" class="headerlink" title="数据序列的电信号表示"></a>数据序列的电信号表示</h3><p><img src="http://o6yn3s5sy.bkt.clouddn.com/dataseq.png" alt="数据序列的电信号表示"><br><img src="http://o6yn3s5sy.bkt.clouddn.com/dataseq1.png" alt="enter image description here"></p>
+<h3 id="信道容量"><a href="#信道容量" class="headerlink" title="信道容量"></a>信道容量</h3><p>1.信道容量是指在一定的条件下，给定通信路径（信道）上所能达到的最大数据传输速率。</p>
+<p>2.理想低通信道的最高码元传输速率<br>–  N= 2W Baud<br>W 是理想低通信道的带宽，单位为赫(Hz) </p>
+<p>3.奈圭斯特公式：<br>无噪声的情况下，在带宽为W 赫兹的信道，其最大的数据传输速率C（信道容量）为<br>– C=2Wlog<sub>2</sub>M</p>
+<p>4.香农(Shannon)用信息论的理论推导出了带宽受限且有高斯白噪声干扰的信道的极限、无差错的信息传输速率。<br>信道的极限信息传输速率 C(信道容量） 可表达为<br>– C = W log2(1+S/N)  b/s<br>W 为信道的带宽（以 Hz 为单位）；<br>S 为信道内所传信号的平均功率；<br>N 为信道内部的高斯噪声功率。<br>信噪比（dB）= 10 log<sub>10</sub> （S/ N）</p>
+<p>5.任何实际的信道都不是理想的，在传输信号时会产生各种失真以及带来多种干扰。<br>码元传输的速率越高，或信号传输的距离越远，在信道的输出端的波形的失真就越严重。</p>
+<h3 id="基带传输"><a href="#基带传输" class="headerlink" title="基带传输"></a>基带传输</h3><p>在数据通信中，表示计算机中二进制比特序列的数字数据信号是典型的矩形脉冲信号。人们把矩形脉冲信号的固有频带称作<strong>基本频带(简称为基带)</strong>，这种矩形脉冲信号就叫做<strong>基带信号</strong>。<br>在数字信道上，计算机中的数据是以矩形脉冲信号直接传送的，这种传送方法称为<strong>基带传输</strong>。 </p>
+<h3 id="频带传输"><a href="#频带传输" class="headerlink" title="频带传输"></a>频带传输</h3><p><strong>频带传输</strong>又称为<strong>调制传输</strong>，就是先将基带信号变换成便于在模拟信道中传输的、具有较高频率范围的信号（频带信号），再将这种频带信号在信道中传输。</p>
+<p>有些传输媒体只适合于传输模拟信号，为充分利用现有的传输资源，必须将数字数据转换为模拟信号才能传输。<br>将数字数据转换为模拟信号的过程叫<strong>调制</strong>（实际上是用数字信号控制模拟信号的某些参数，使模拟信号携带信息）。<br>将携带信息的模拟信号转换成数字数据（或称从已调制的模拟信号中提取数字数据）的过程叫<strong>解调</strong>。</p>
+<p>最常用的数字数据－模拟信号转换设备是<strong>调制解调器</strong>（MODEM），同时具有调制和解调的功能，在数据通信系统中，是一种典型的DCE设备。<br>常用的调制技术：<strong>载波</strong>——一种便于发射和接收，及技术实现的高频简谐波或周期性脉冲信号。<br>当载波为高频简谐波时，可用三个参数描述：振幅、频率、相位。控制这三个参数变化，可以实现调制功能。<br>以数字数据控制载波的幅度，称为数字调幅，又称幅移键控，简称ASK。<br>以数字数据控制载波的相位，称为数字调相，又称相移键控，简称PSK。<br>以数字数据控制载波的频率，称为数字调频，又称频移键控，简称FSK。</p>
+<h3 id="数字数据传输"><a href="#数字数据传输" class="headerlink" title="数字数据传输"></a>数字数据传输</h3><p>在数字信道中传输数据信号称为数据信号的数字传输，简称为<strong>数字数据传输</strong>。</p>
+<hr>
+<h2 id="多路复用技术"><a href="#多路复用技术" class="headerlink" title="多路复用技术"></a>多路复用技术</h2><p><strong>信道复用技术</strong>是在一条传输信道中传输多路信号，以提高传输媒体的利用率。</p>
+<h3 id="频分复用"><a href="#频分复用" class="headerlink" title="频分复用"></a>频分复用</h3><p>按<strong>频率</strong>划分不同的子信道，每个子信道占用不同的频率范围。采用调制技术，将信号搬移到信道相应的频段上。<br>常用于载波电话系统、电视等。</p>
+<h3 id="时分复用"><a href="#时分复用" class="headerlink" title="时分复用"></a>时分复用</h3><p>采用<strong>时间分片</strong>方式来实现传输信道的多路复用，即每一路信号传输都使用信道的全部带宽，但只能使用其中某个时隙。</p>
+<h4 id="静态时分复用"><a href="#静态时分复用" class="headerlink" title="静态时分复用"></a>静态时分复用</h4><p>静态时分复用中，多个数据终端的信号分别在预定的时隙内传输，其分配关系固定，周期性使用，收发双方保持同步，又称同步时分复用。若无数据传输时，对应时隙空闲。<br><strong>静态时分复用</strong>时高速传输介质容量等于各个低速终端数据速率之和。<br>静态时分复用中，每个数据终端的信号与传输时隙分配关系固定，无数据传输时，对应时隙空闲。因此效率较低。</p>
+<h4 id="动态时分复用"><a href="#动态时分复用" class="headerlink" title="动态时分复用"></a>动态时分复用</h4><p>动态时分复用又称<strong>异步时分复用</strong>，或称<strong>统计时分复用</strong>（STDM），是按需分配媒体资源，提高了传输媒体的利用率。<br>动态时分复用中，用户数据传输速率之和可以大于高速线路传输容量。<br>动态时分复用中需要使用缓冲存储和流量控制技术来保证数据正确传送。</p>
+<h3 id="码分复用"><a href="#码分复用" class="headerlink" title="码分复用"></a>码分复用</h3><p>码分复用是蜂窝移动通信中迅速发展的一种信号处理方式。<br>常用的名词是码分多址 CDMA  (Code Division Multiple Access)。<br>这种系统发送的信号有很强的抗干扰能力，其频谱类似于白噪声，不易被敌人发现。<br>每一个比特时间划分为 m 个短的间隔，称为码片(chip)。</p>
+<h3 id="波分复用"><a href="#波分复用" class="headerlink" title="波分复用"></a>波分复用</h3><p>波分复用就是光的频分复用，即在一根光纤上传输多路光载波信号。<br>密集波分复用（DWDM）是一种支持巨大数量信道的系统。<br>波分复用技术可以进一步提高光纤的传输容量，满足通信需求量的迅速增长和多媒体通信。</p>
+<hr>
+<h2 id="数据交换技术"><a href="#数据交换技术" class="headerlink" title="数据交换技术"></a>数据交换技术</h2><p>交换是一种集中和转接的概念。<br>一个通信网络由许多交换节点组成，信息在网络中的传输要经过一系列的交换节点，从一条线路转换的另一条线路，最后到达目的地。交换节点转发信息的方式，就称为<strong>交换方式</strong>。</p>
+<h3 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h3><p>1.电路交换是一种实时交换，适用于实时要求高的话音通信( 全程 &lt;= 200 ms ) 。<br>2.在通信前要通过呼叫为主、被叫用户建立一条物理连接。如果呼叫请求数超过交换网的连接能力(过负荷)，用户会听到忙音。衡量电话交换服务质量指标之一：呼叫损失率。<br>3.电路交换是预分配带宽，话路接通后，即使无信息传送也白白占电路，据统计，传送话音时电路利用率仅为36%。<br>4.在传送信息时，没有任何差错控制措施，不利于传输可靠性要求高的突发性数据业务。</p>
+<h3 id="报文交换"><a href="#报文交换" class="headerlink" title="报文交换"></a>报文交换</h3><p>1.交换节点采用存储－转发方式对每份报文完整地加以处理。<br>2.每份报文中含有报头，包含收、发双方的地址，以便交换节点进行路由选择，可以一对多地传送报文。<br>3.报文交换可进行速率、码型的变换，具有差错控制措施。<br>4.存储－转发时延大，随机性也大，过负荷时将会导致报文延迟。</p>
+<h3 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h3><p>1.可实现多路通信功能。<br>2.采用统计时分多路复用，提高了线路利用率。<br>3.能够实现不同类型的数据终端设备（含有不同的传输速率、不同的编码、不同的通信控制规程等）之间的通信。<br>4.数据传输质量高、可靠性高，可使用优先级。<br>5.提高了链路利用率，经济性好。</p>
+<hr>
+<h2 id="差错控制技术"><a href="#差错控制技术" class="headerlink" title="差错控制技术"></a>差错控制技术</h2><p>所谓差错，就是在通信接收端收到的数据和发送端发送的数据不一致的情况。<br>由于数据通信系统传输特性的不理想和外部干扰的存在，传输中出现差错是不可避免的。<br>差错控制的目的：用来提高数据传输的可靠性与传输效率 。</p>
+<h3 id="差错控制原理"><a href="#差错控制原理" class="headerlink" title="差错控制原理"></a>差错控制原理</h3><ul>
+<li>随机差错      <ul>
+<li>原因： 信道热噪声</li>
+<li>特点： 随机的、单个的</li>
+</ul>
+</li>
+<li>突发差错<ul>
+<li>原因： 脉冲噪声（如闪电） </li>
+<li>特点： 成片的、连续的</li>
+</ul>
+</li>
+</ul>
+<p>在发送的数据码元序列中加入监督位，并进行某种变换，使它们和原来相互独立的数据码元之间具有某种约束关系。在接收端检测接收的数据码元和监督码元的约束关系，如果这种约束关系被破坏，则接收端就可以发现传输中的错误，甚至纠正错误。</p>
+<p>变换的方法不同，就构成了不同的编码，因而产生不同的差错控制方法。<br><strong>检错码</strong>可以发现传输错误，但不能自动纠正<br><strong>纠错码</strong>可以自动纠正传输错误。<br><strong>差错控制是以降低效率为代价的。</strong></p>
+<h3 id="差错控制的方式"><a href="#差错控制的方式" class="headerlink" title="差错控制的方式"></a>差错控制的方式</h3><ul>
+<li>自动请求重发：接收端在收到的信码中检测出错码时，即设法通知发送端重发。</li>
+<li>前向纠错：接收端不仅能在收到的信码中发现有错码，而且能够纠正错码。</li>
+<li>混合方式：对少量差错予以自动纠正，而超过其纠正能力的差错则通过重发的方法加以纠正。 </li>
+<li>信息反馈：接收端将收到的信码原封不动地转发会发送端，并与原发送信码相比较。</li>
+</ul>
+<hr>
+<h2 id="数据通信接口特性"><a href="#数据通信接口特性" class="headerlink" title="数据通信接口特性"></a>数据通信接口特性</h2><p>通信接口特性是指DTE和DCE之间连接的物理特性。<br>这种连接特性与所选用的DCE类型、传输信道（模拟/数字）、通信方式（半双工/全双工）和通信速率有关。<br>物理层标准主要描述了通信接口的相关特性。包括<strong>机械特性、电气特性、功能特性和规程特性</strong>。 </p>
+<ul>
+<li>机械特性：指明接口所用接线器的形状和尺寸、引线数目和排列、固定和锁定装置等等。</li>
+<li>电气特性：指明在接口电缆的各条线上出现的电压的范围。</li>
+<li>功能特性：指明某条线上出现的某一电平的电压表示何种意义。</li>
+<li>规程特性：指明对于不同功能的各种可能事件的出现顺序和条件。 </li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机网络/" rel="tag">#计算机网络</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/03/tcp_ip/" rel="next" title="TCP/IP 体系">
+                <i class="fa fa-chevron-left"></i> TCP/IP 体系
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/head_img.png"
+               alt="Junifer" />
+          <p class="site-author-name" itemprop="name">Junifer</p>
+          <p class="site-description motion-element" itemprop="description">诗和远方</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yuan0" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friends
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://shenyizhou.github.io/" title="Orion" target="_blank">Orion</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.importcjj.com" title="Signal" target="_blank">Signal</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhicongchen.github.io/" title="Let there be light" target="_blank">Let there be light</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信息、数据与信号"><span class="nav-number">1.1.</span> <span class="nav-text">信息、数据与信号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信号"><span class="nav-number">1.1.2.</span> <span class="nav-text">信号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据通信系统"><span class="nav-number">1.2.</span> <span class="nav-text">数据通信系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#信源和信宿"><span class="nav-number">1.2.1.</span> <span class="nav-text">信源和信宿</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信道"><span class="nav-number">1.2.2.</span> <span class="nav-text">信道</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信号转换设备"><span class="nav-number">1.2.3.</span> <span class="nav-text">信号转换设备</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输媒体"><span class="nav-number">1.3.</span> <span class="nav-text">传输媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#双绞线-twisted-pair-TP"><span class="nav-number">1.3.1.</span> <span class="nav-text">双绞线(twisted pair, TP)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同轴电缆"><span class="nav-number">1.3.2.</span> <span class="nav-text">同轴电缆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#光缆"><span class="nav-number">1.3.3.</span> <span class="nav-text">光缆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无线电波"><span class="nav-number">1.3.4.</span> <span class="nav-text">无线电波</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#微波通信"><span class="nav-number">1.3.5.</span> <span class="nav-text">微波通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#红外线"><span class="nav-number">1.3.6.</span> <span class="nav-text">红外线</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据通信系统的技术指标"><span class="nav-number">1.4.</span> <span class="nav-text">数据通信系统的技术指标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据传输速率"><span class="nav-number">1.4.1.</span> <span class="nav-text">数据传输速率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信道带宽"><span class="nav-number">1.4.2.</span> <span class="nav-text">信道带宽</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#误码率和误组率"><span class="nav-number">1.4.3.</span> <span class="nav-text">误码率和误组率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时延"><span class="nav-number">1.4.4.</span> <span class="nav-text">时延</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据传输方式"><span class="nav-number">2.</span> <span class="nav-text">数据传输方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#并行传输与串行传输"><span class="nav-number">2.1.</span> <span class="nav-text">并行传输与串行传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步传输与同步传输"><span class="nav-number">2.2.</span> <span class="nav-text">异步传输与同步传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单工、半双工与全双工传输"><span class="nav-number">2.3.</span> <span class="nav-text">单工、半双工与全双工传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟传输与数字传输"><span class="nav-number">2.4.</span> <span class="nav-text">模拟传输与数字传输</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据传送技术"><span class="nav-number">3.</span> <span class="nav-text">数据传送技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据序列的电信号表示"><span class="nav-number">3.1.</span> <span class="nav-text">数据序列的电信号表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信道容量"><span class="nav-number">3.2.</span> <span class="nav-text">信道容量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基带传输"><span class="nav-number">3.3.</span> <span class="nav-text">基带传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#频带传输"><span class="nav-number">3.4.</span> <span class="nav-text">频带传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数字数据传输"><span class="nav-number">3.5.</span> <span class="nav-text">数字数据传输</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多路复用技术"><span class="nav-number">4.</span> <span class="nav-text">多路复用技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#频分复用"><span class="nav-number">4.1.</span> <span class="nav-text">频分复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时分复用"><span class="nav-number">4.2.</span> <span class="nav-text">时分复用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#静态时分复用"><span class="nav-number">4.2.1.</span> <span class="nav-text">静态时分复用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态时分复用"><span class="nav-number">4.2.2.</span> <span class="nav-text">动态时分复用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#码分复用"><span class="nav-number">4.3.</span> <span class="nav-text">码分复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#波分复用"><span class="nav-number">4.4.</span> <span class="nav-text">波分复用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据交换技术"><span class="nav-number">5.</span> <span class="nav-text">数据交换技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#电路交换"><span class="nav-number">5.1.</span> <span class="nav-text">电路交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#报文交换"><span class="nav-number">5.2.</span> <span class="nav-text">报文交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组交换"><span class="nav-number">5.3.</span> <span class="nav-text">分组交换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#差错控制技术"><span class="nav-number">6.</span> <span class="nav-text">差错控制技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#差错控制原理"><span class="nav-number">6.1.</span> <span class="nav-text">差错控制原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#差错控制的方式"><span class="nav-number">6.2.</span> <span class="nav-text">差错控制的方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据通信接口特性"><span class="nav-number">7.</span> <span class="nav-text">数据通信接口特性</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junifer</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
