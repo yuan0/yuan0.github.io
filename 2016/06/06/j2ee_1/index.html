@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="UML," />
+  <meta name="keywords" content="JavaEE," />
 
 
 
@@ -84,22 +84,25 @@
 
 
 
-<meta name="description" content="UMLUnified Modeling Language——统一建模语言
+<meta name="description" content="Handling SOAP MessagesHandling XML DataJava provides the following two APIs for parsing XML data:
 
-UML is the standardized language that enables you to create the structure and design of an object-oriented system">
+JAXP
+JAXB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UML(0)">
-<meta property="og:url" content="http://yoursite.com/2016/06/03/uml_0/index.html">
+<meta property="og:title" content="JavaEE(1)">
+<meta property="og:url" content="http://yoursite.com/2016/06/06/j2ee_1/index.html">
 <meta property="og:site_name" content="Hello :)">
-<meta property="og:description" content="UMLUnified Modeling Language——统一建模语言
+<meta property="og:description" content="Handling SOAP MessagesHandling XML DataJava provides the following two APIs for parsing XML data:
 
-UML is the standardized language that enables you to create the structure and design of an object-oriented system">
-<meta property="og:updated_time" content="2016-06-02T16:42:52.316Z">
+JAXP
+JAXB">
+<meta property="og:updated_time" content="2016-06-05T16:46:26.395Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UML(0)">
-<meta name="twitter:description" content="UMLUnified Modeling Language——统一建模语言
+<meta name="twitter:title" content="JavaEE(1)">
+<meta name="twitter:description" content="Handling SOAP MessagesHandling XML DataJava provides the following two APIs for parsing XML data:
 
-UML is the standardized language that enables you to create the structure and design of an object-oriented system">
+JAXP
+JAXB">
 
 
 
@@ -117,7 +120,7 @@ UML is the standardized language that enables you to create the structure and de
   };
 </script>
 
-  <title> UML(0) | Hello :) </title>
+  <title> JavaEE(1) | Hello :) </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -267,7 +270,7 @@ UML is the standardized language that enables you to create the structure and de
             
             
               
-                UML(0)
+                JavaEE(1)
               
             
           </h1>
@@ -279,8 +282,8 @@ UML is the standardized language that enables you to create the structure and de
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-03T00:39:22+08:00" content="2016-06-03">
-              2016-06-03
+            <time itemprop="dateCreated" datetime="2016-06-06T00:46:27+08:00" content="2016-06-06">
+              2016-06-06
             </time>
           </span>
 
@@ -326,143 +329,58 @@ UML is the standardized language that enables you to create the structure and de
       
 
       
-        <h2 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h2><p>Unified Modeling Language——统一建模语言</p>
-<blockquote>
-<p>UML is the standardized language that enables you to create the structure and design of an object-oriented system</p>
-</blockquote>
-<hr>
-<a id="more"></a>
-<h3 id="SDLC"><a href="#SDLC" class="headerlink" title="SDLC"></a>SDLC</h3><p>Software Development Life Cycle——软件生命周期</p>
-<p>有6个阶段：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>产物</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Feasibility analysis 可行性分析</td>
-<td>a feasibility report</td>
-<td>-</td>
-</tr>
-<tr>
-<td>Requirement analysis and specification 需求分析和规范</td>
-<td>SRS(Software Requirement Specification) document</td>
-<td>-</td>
-</tr>
-<tr>
-<td>Design 软件设计</td>
-<td>a design document</td>
-<td>translate the requirements into a logical structure</td>
-</tr>
-<tr>
-<td>Coding 程序编码</td>
-<td>source code</td>
-<td>-</td>
-</tr>
-<tr>
-<td>Testing 软件测试</td>
-<td>a test report containing errors</td>
-<td>-</td>
-</tr>
-<tr>
-<td>Maintenance 软件维护</td>
-<td>-</td>
-<td>持续时间最长</td>
-</tr>
-</tbody>
-</table>
-<h4 id="Software-Development-Approaches"><a href="#Software-Development-Approaches" class="headerlink" title="Software Development Approaches"></a>Software Development Approaches</h4><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>特点</th>
-<th>适用场景</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Waterfall 瀑布型</td>
-<td>linear sequential flow;<br>cannot handle changes in requirements</td>
-<td>In case requirements are <strong>stable</strong> and <strong>frozen</strong> across the project plan</td>
-</tr>
-<tr>
-<td>Prototyping 原型</td>
-<td>evolutionary;<br>types: Throwaway prototypes and Evolutionary prototypes</td>
-<td>Used in the requirements gathering and analysis phase to capture the exact requirements of the proposed system</td>
-</tr>
-<tr>
-<td>Spiral 螺旋型</td>
-<td>iterative and linear</td>
-<td>Ideal for developing software that are released in various versions</td>
-</tr>
-<tr>
-<td>Win-win spiral 双赢螺旋型</td>
-<td>the development team and the customer hold discussions and negotiate on the requirements</td>
-<td>Generally used when you have time-bound releases</td>
-</tr>
-<tr>
-<td>Incremental 增量型 *</td>
-<td>software are broken into various function units which contain similar tasks</td>
-<td>Applicable only to large applications</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h3 id="Object-Oriented-Concepts"><a href="#Object-Oriented-Concepts" class="headerlink" title="Object-Oriented Concepts"></a>Object-Oriented Concepts</h3><ul>
-<li>Classes and objects</li>
-<li>Inheritance</li>
-<li>Abstraction</li>
-<li>Encapsulation 封装性</li>
-<li>Polymorphism 多态性</li>
-</ul>
-<hr>
-<h3 id="Types-of-UML-Diagrams"><a href="#Types-of-UML-Diagrams" class="headerlink" title="Types of UML Diagrams"></a>Types of UML Diagrams</h3><ul>
-<li>Use case diagrams 用例图</li>
-<li>Class diagrams 类图</li>
-<li>Object diagrams 对象图</li>
-<li>Communication diagrams 通信图</li>
-<li>Sequence diagrams 序列图</li>
-<li>State Machine diagrams 状态机图</li>
-<li>Activity diagrams 活动图</li>
-<li>Package Diagrams 包图</li>
-<li>Component diagrams 构件图</li>
-<li>Deployment diagrams 部署图</li>
-<li>Timing Diagrams 时序图</li>
-<li>Composite Structure Diagrams 复合结构图</li>
-<li>Interaction Overview Diagrams 交互概览图</li>
-</ul>
-<h4 id="Interactive-diagrams"><a href="#Interactive-diagrams" class="headerlink" title="Interactive diagrams"></a>Interactive diagrams</h4><p>Include:</p>
+        <h2 id="Handling-SOAP-Messages"><a href="#Handling-SOAP-Messages" class="headerlink" title="Handling SOAP Messages"></a>Handling SOAP Messages</h2><h3 id="Handling-XML-Data"><a href="#Handling-XML-Data" class="headerlink" title="Handling XML Data"></a>Handling XML Data</h3><p>Java provides the following two APIs for parsing XML data:</p>
 <ul>
-<li>Sequence diagram</li>
-<li>Communication diagram</li>
-<li>Timing diagram</li>
-<li>Interactive overview diagram</li>
+<li>JAXP</li>
+<li>JAXB</li>
 </ul>
-<hr>
-<h3 id="UML-Modeling-Techniques"><a href="#UML-Modeling-Techniques" class="headerlink" title="UML Modeling Techniques"></a>UML Modeling Techniques</h3><ul>
-<li>Requirements modeling: Involves depicting the requirements using use case diagrams</li>
-<li>Static modeling: Involves depicting the static constituents of the software system using the class, object, and composite structure diagrams</li>
-<li>Dynamic modeling: Involves depicting the behavior of static constituents using the following diagrams:<ul>
-<li>Activity diagrams</li>
-<li>State machine diagrams</li>
-<li>Communication diagrams</li>
-<li>Sequence diagrams</li>
-<li>Interaction overview diagrams</li>
-<li>Timing diagrams</li>
+<a id="more"></a>
+<h4 id="JAXP"><a href="#JAXP" class="headerlink" title="JAXP"></a>JAXP</h4><p> Includes:</p>
+<ul>
+<li>SAX API<ul>
+<li>Process an XML document in the form of <strong>a steam of data</strong></li>
+<li>Allows only reading of an XML document.</li>
 </ul>
 </li>
-<li>Architectural modeling: Involves depicting the architecture of the software system into multiple tiers, such as presentation, business, and resource by using the following diagrams:<ul>
-<li>Package diagram</li>
-<li>Component diagram</li>
-<li>Deployment diagram</li>
+<li>DOM API <ul>
+<li>Allows reading and manipulation of an XML document at runtime</li>
+<li>Parses the XML doc by using a DOM parser</li>
 </ul>
 </li>
 </ul>
+<h4 id="JAXB"><a href="#JAXB" class="headerlink" title="JAXB"></a>JAXB</h4><p><u>JAXB</u> is  an API that parses an XML doc by converting the XML doc into a tree of Java objects and then again, converting these trees into the XML doc.<br>Steps:<br>1.Compilation<br>2.Validation<br>3.Unmarshalling<br>4.Marshalling</p>
+<h3 id="Handling-Non-XML-Data"><a href="#Handling-Non-XML-Data" class="headerlink" title="Handling Non-XML Data"></a>Handling Non-XML Data</h3><p>SAAJ(SOAP with Attachments API for JAVA) is an API that contains methods to exchange SOAP messages between the clients and the Web applications along with non-XML data.</p>
 <hr>
+<h2 id="Working-with-Metro-Web-Services"><a href="#Working-with-Metro-Web-Services" class="headerlink" title="Working with Metro Web Services"></a>Working with Metro Web Services</h2><h3 id="The-Metro-Web-Service-Stack"><a href="#The-Metro-Web-Service-Stack" class="headerlink" title="The Metro Web Service Stack"></a>The Metro Web Service Stack</h3><p>Metro is a software stack, which fulfills all you Web service related requirements.<br>Metro integrates various technologies used in the Web service development in a single software stack, providing faster, secure, reliable, interoperable, and performance-oriented Web services.<br>Metro uses JAX-WS and WSIT for Web service development.</p>
+<h4 id="JAX-WS"><a href="#JAX-WS" class="headerlink" title="JAX-WS"></a>JAX-WS</h4><p>The JAX-WS provides the <strong>core APIs</strong> required for Web service development.</p>
+<h4 id="WSIT-Web-Services-Interoperability-Technology"><a href="#WSIT-Web-Services-Interoperability-Technology" class="headerlink" title="WSIT(Web Services Interoperability Technology)"></a>WSIT(Web Services Interoperability Technology)</h4><p>The WSIT provides APIs for secure message delivery, optimization of messages for faster message transfer, and reliable message delivery to ensure that messages reach their destinations.</p>
+<p>Specifications:</p>
+<ul>
+<li>Core XML</li>
+<li>Bootstrapping and configuration</li>
+<li>Optimization</li>
+<li>Reliability</li>
+<li>Security</li>
+</ul>
+<hr>
+<h2 id="Web-Service-Patterns"><a href="#Web-Service-Patterns" class="headerlink" title="Web Service Patterns"></a>Web Service Patterns</h2><h3 id="Design-patterns"><a href="#Design-patterns" class="headerlink" title="Design patterns"></a>Design patterns</h3><p><u>Design patterns</u> are well-thought out and previously-used solutions to programming problems.</p>
+<ul>
+<li>Asychronous Interaction Pattern</li>
+<li>Web Service Cache Pattern</li>
+<li>Web Service Broker Pattern</li>
+<li>Web Service Logger Pattern<ul>
+<li>Web service</li>
+<li>Secure logger</li>
+<li>Log reader</li>
+<li>Log viewer</li>
+</ul>
+</li>
+</ul>
+<p><u>Deployment Patterns</u> are well-thought out and previously-used solutions for deployment problems.</p>
+<ul>
+<li>HTTP load balancing pattern</li>
+<li>Container cluster pattern</li>
+</ul>
 
       
     </div>
@@ -484,7 +402,7 @@ UML is the standardized language that enables you to create the structure and de
       
         <div class="post-tags">
           
-            <a href="/tags/UML/" rel="tag">#UML</a>
+            <a href="/tags/JavaEE/" rel="tag">#JavaEE</a>
           
         </div>
       
@@ -493,17 +411,13 @@ UML is the standardized language that enables you to create the structure and de
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/30/osi_rm/" rel="next" title="OSI/RM体系">
-                <i class="fa fa-chevron-left"></i> OSI/RM体系
+              <a href="/2016/06/05/j2ee_0/" rel="next" title="JavaEE(0)">
+                <i class="fa fa-chevron-left"></i> JavaEE(0)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/03/uml_1/" rel="prev" title="UML(1)">
-                UML(1) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -650,7 +564,7 @@ UML is the standardized language that enables you to create the structure and de
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UML"><span class="nav-number">1.</span> <span class="nav-text">UML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SDLC"><span class="nav-number">1.1.</span> <span class="nav-text">SDLC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Software-Development-Approaches"><span class="nav-number">1.1.1.</span> <span class="nav-text">Software Development Approaches</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-Oriented-Concepts"><span class="nav-number">1.2.</span> <span class="nav-text">Object-Oriented Concepts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-UML-Diagrams"><span class="nav-number">1.3.</span> <span class="nav-text">Types of UML Diagrams</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Interactive-diagrams"><span class="nav-number">1.3.1.</span> <span class="nav-text">Interactive diagrams</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UML-Modeling-Techniques"><span class="nav-number">1.4.</span> <span class="nav-text">UML Modeling Techniques</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Handling-SOAP-Messages"><span class="nav-number">1.</span> <span class="nav-text">Handling SOAP Messages</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Handling-XML-Data"><span class="nav-number">1.1.</span> <span class="nav-text">Handling XML Data</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JAXP"><span class="nav-number">1.1.1.</span> <span class="nav-text">JAXP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JAXB"><span class="nav-number">1.1.2.</span> <span class="nav-text">JAXB</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Handling-Non-XML-Data"><span class="nav-number">1.2.</span> <span class="nav-text">Handling Non-XML Data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Working-with-Metro-Web-Services"><span class="nav-number">2.</span> <span class="nav-text">Working with Metro Web Services</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Metro-Web-Service-Stack"><span class="nav-number">2.1.</span> <span class="nav-text">The Metro Web Service Stack</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JAX-WS"><span class="nav-number">2.1.1.</span> <span class="nav-text">JAX-WS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WSIT-Web-Services-Interoperability-Technology"><span class="nav-number">2.1.2.</span> <span class="nav-text">WSIT(Web Services Interoperability Technology)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Service-Patterns"><span class="nav-number">3.</span> <span class="nav-text">Web Service Patterns</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Design-patterns"><span class="nav-number">3.1.</span> <span class="nav-text">Design patterns</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
