@@ -1,0 +1,791 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="计算机网络," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="数据链路层基本概念数据链路层在物理连接提供的比特流传输服务基础上，通过一系列通信控制机制，构成透明的、相对无差错的数据链路，实现可靠、有效的数据传送。数据链路层协议负责在物理网络与计算机的协议组之间提供一个接口。
+
+数据电路：在传输信道两端加上信号变换设备之后所形成的二进制比特流通路。即数据电路由传输信道加上DCE组成，实现数据信号的传输。又常称为物理链路或链路.
+数据链路：在数据电路建立的基础上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据链路层">
+<meta property="og:url" content="http://yoursite.com/2016/06/09/data_link_layer/index.html">
+<meta property="og:site_name" content="Hello :)">
+<meta property="og:description" content="数据链路层基本概念数据链路层在物理连接提供的比特流传输服务基础上，通过一系列通信控制机制，构成透明的、相对无差错的数据链路，实现可靠、有效的数据传送。数据链路层协议负责在物理网络与计算机的协议组之间提供一个接口。
+
+数据电路：在传输信道两端加上信号变换设备之后所形成的二进制比特流通路。即数据电路由传输信道加上DCE组成，实现数据信号的传输。又常称为物理链路或链路.
+数据链路：在数据电路建立的基础上">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/stop_wait.png">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/infozhen.png">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/listernzhen.png">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/nonumzhen.png">
+<meta property="og:updated_time" content="2016-06-09T08:47:34.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据链路层">
+<meta name="twitter:description" content="数据链路层基本概念数据链路层在物理连接提供的比特流传输服务基础上，通过一系列通信控制机制，构成透明的、相对无差错的数据链路，实现可靠、有效的数据传送。数据链路层协议负责在物理网络与计算机的协议组之间提供一个接口。
+
+数据电路：在传输信道两端加上信号变换设备之后所形成的二进制比特流通路。即数据电路由传输信道加上DCE组成，实现数据信号的传输。又常称为物理链路或链路.
+数据链路：在数据电路建立的基础上">
+<meta name="twitter:image" content="http://o6yn3s5sy.bkt.clouddn.com/stop_wait.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 数据链路层 | Hello :) </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hello :)</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">MDZZ</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demos">
+          <a href="/demos" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            演示
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                数据链路层
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-09T16:41:58+08:00" content="2016-06-09">
+              2016-06-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>数据链路层在物理连接提供的比特流传输服务基础上，通过一系列通信控制机制，构成透明的、相对无差错的数据链路，实现可靠、有效的数据传送。<br>数据链路层协议负责在物理网络与计算机的协议组之间提供一个接口。</p>
+<ul>
+<li>数据电路：在传输信道两端加上信号变换设备之后所形成的二进制比特流通路。即数据电路由传输信道加上DCE组成，实现数据信号的传输。又常称为物理链路或链路.</li>
+<li>数据链路：在数据电路建立的基础上，在链路协议控制下，使通信双方正确传输数据的终端设备与传输线路的组合体。又称为逻辑链路.</li>
+</ul>
+<a id="more"></a>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<li>链路管理</li>
+<li>帧同步（帧定界）</li>
+<li>流量控制</li>
+<li>数据和控制信息的识别</li>
+<li>寻址</li>
+<li>透明传输 </li>
+<li>差错控制</li>
+</ul>
+<hr>
+<h2 id="流量控制和差错控制"><a href="#流量控制和差错控制" class="headerlink" title="流量控制和差错控制"></a>流量控制和差错控制</h2><blockquote>
+<p>现代数据通信传输，大多数采用了存储转发的分组交换技术，由于通信的随机性和突发性，当接收方的处理能力小于发送方的发送量时，必须采用流量控制。</p>
+</blockquote>
+<h3 id="停止-等待流量控制方式"><a href="#停止-等待流量控制方式" class="headerlink" title="停止-等待流量控制方式"></a>停止-等待流量控制方式</h3><p><img src="http://o6yn3s5sy.bkt.clouddn.com/stop_wait.png" alt="Stop-Wait"></p>
+<p> t<sub>P</sub> = t<sub>2</sub>– t<sub>0</sub> = t<sub>3</sub> – t<sub>1</sub> = L / v       传播时延<br>      t<sub>F</sub> = t<sub>1</sub> – t<sub>0</sub> = t<sub>3</sub> - t<sub>2</sub> = F / C        发送时延<br>      t<sub>A</sub> = t<sub>5</sub> – t<sub>4</sub> = A / C                             应答帧发送时延<br>      t<sub>proc</sub> = t<sub>4</sub> - t<sub>3</sub>                  处理时延<br>             L      节点A 与 B 之间的距离<br>             v      信号传播速率  （3× 10^8  m / s）<br>             F       数据帧长度 = H + D （帧头＋数据）<br>             A      应答帧长度<br>             C     数据发送速率   bits/s</p>
+<p>性能分析:<br>     正常情况信道利用率（无差错）<br>           U = t<sub>D</sub> / (t<sub>F</sub> + t<sub>A</sub> + 2t<sub>P</sub> + 2t<sub>proc</sub>)<br>    假设收发双方处理时间相同；<br>    不考虑处理时延和传播时延，及应答帧的开销，则<br>       U  仅与帧结构相关；<br>       U= t<sub>D</sub>/ t<sub>F</sub> =D/F = D/(H+D)<br>    当传播时延较大时，发送时延与传播时延相比较小时，信道利用率很低。</p>
+<h3 id="滑动窗口流量控制方式"><a href="#滑动窗口流量控制方式" class="headerlink" title="滑动窗口流量控制方式"></a>滑动窗口流量控制方式</h3><p>为了解决停止等待协议信道利用率低的问题，可以采用“滑动窗口”控制方法。<br>在滑动窗口流量控制方式中，根据通信双方对于出现差错和需要流量控制过程时所采用的处理方法不同，<br>分为：<br>              连续 ARQ 和选择 ARQ。</p>
+<h3 id="连续ARQ方式Automatic-Repeat-reQuest"><a href="#连续ARQ方式Automatic-Repeat-reQuest" class="headerlink" title="连续ARQ方式Automatic  Repeat-reQuest"></a>连续ARQ方式Automatic  Repeat-reQuest</h3><ul>
+<li>当发送完一个数据帧后，不是停下来等待确认帧，而是继续发送若干数据帧；</li>
+<li>如果收到了接收方发来的确认帧，则发送方可以继续发送数据帧；</li>
+<li>如果出现差错，则从出现差错的数据帧开始全部重发。</li>
+<li>重发的帧序号是连续的。</li>
+</ul>
+<p>当用 n 个比特进行编号时，则只有在发送窗口的大小 W<sub>T</sub> &lt;=2^n-1时，连续 ARQ 协议才能正确运行（模－1）。</p>
+<h3 id="选择ARQ方式"><a href="#选择ARQ方式" class="headerlink" title="选择ARQ方式"></a>选择ARQ方式</h3><p>为进一步提高信道的利用率，可设法<strong>只重传出错的数据帧或计时器超时的数据帧</strong>。</p>
+<p>选择 ARQ 方式，接收方允许接收多个不严格按照顺序的帧。若用 n 比特进行编号，为避免编号混乱，接收窗口的最大值受下式的约束<br>        W<sub>R</sub>&lt;= 2<sup>n</sup>/2<br>当接收窗口为最大值W<sub>R</sub> ＝ 2<sup>n</sup>/2时，选择ARQ方式发送窗口<br>                       W<sub>T</sub> ＝2<sup>n</sup>/2</p>
+<hr>
+<h3 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h3><p>差错即误码，差错控制的核心是抗干扰编码。<br>在发送的数据码元序列中加入<strong>监督位</strong>，并进行某种变换，使它们和原来相互独立的数据码元之间具有某种约束关系。</p>
+<blockquote>
+<p>所谓差错控制编码实际上就是在保持信息的位数不变的情况下，采用增加码长的方法来降低误码率。</p>
+</blockquote>
+<h4 id="差错控制编码"><a href="#差错控制编码" class="headerlink" title="差错控制编码"></a>差错控制编码</h4><p>码间距离（d） ：两个码字的对应位取值不同的个数。例：<br>    10<strong>001</strong>001<br>    10<strong>110</strong>001<br>汉明距离（d<sub>0</sub>） ：一个有效编码集中，任意两个码字的码间距离的最小值。即一组编码中的最小码距。<br>如果要能检测 e 个差错，则编码集的汉明距离至少为 e + 1；<br>如果要能纠正 t 个差错，则编码集的 汉明距离至少为 2 t + 1；<br>如果要能检测 e 个差错，同时能纠正   t 个差错（ e &gt; t ） ，则编码集的汉明距离至少为 e + t + 1；</p>
+<h4 id="检错码"><a href="#检错码" class="headerlink" title="检错码"></a>检错码</h4><ul>
+<li>恒比码</li>
+<li>正反码</li>
+<li>奇偶校验码</li>
+<li>循环冗余码（CRC）</li>
+</ul>
+<h4 id="纠错码"><a href="#纠错码" class="headerlink" title="纠错码"></a>纠错码</h4><p>汉明码（Hamming)</p>
+<h4 id="汉明码"><a href="#汉明码" class="headerlink" title="汉明码"></a>汉明码</h4><blockquote>
+<p>汉明码是一种能够纠正一位错码且编码效率较高的线性分组码。</p>
+</blockquote>
+<p>若码长为n，信息位数为k，则<strong>监督位</strong>数为r=n-k。<br>如果希望用r个监督位构造出r个监督关系式来指示一位错码的n种可能位置，则要求<br>2<sup>r</sup>-1&gt;=n 或 2<sup>r</sup>&gt;=k+r+1</p>
+<p>设分组码(n,k)中k=4，根据上式可得r&gt;=3，则n=7。</p>
+<table>
+<thead>
+<tr>
+<th>S<sub>1</sub>S<sub>2</sub>S<sub>3</sub></th>
+<th>错码位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>001</td>
+<td>a<sub>0</sub></td>
+</tr>
+<tr>
+<td>010</td>
+<td>a<sub>1</sub></td>
+</tr>
+<tr>
+<td>100</td>
+<td>a<sub>2</sub></td>
+</tr>
+<tr>
+<td>011</td>
+<td>a<sub>3</sub></td>
+</tr>
+<tr>
+<td>101</td>
+<td>a<sub>4</sub></td>
+</tr>
+<tr>
+<td>110</td>
+<td>a<sub>5</sub></td>
+</tr>
+<tr>
+<td>111</td>
+<td>a<sub>6</sub></td>
+</tr>
+<tr>
+<td>000</td>
+<td>无错</td>
+</tr>
+</tbody>
+</table>
+<p>S<sub>1</sub> = a<sub>6</sub>&oplus;a<sub>5</sub>&oplus;a<sub>4</sub>&oplus;a<sub>2</sub> </p>
+<p>S<sub>2</sub> = a<sub>6</sub>&oplus;a<sub>5</sub>&oplus;a<sub>3</sub>&oplus;a<sub>1</sub></p>
+<p>S<sub>3</sub> = a<sub>6</sub>&oplus;a<sub>4</sub>&oplus;a<sub>3</sub>&oplus;a<sub>0</sub></p>
+<h5 id="编码效率"><a href="#编码效率" class="headerlink" title="编码效率"></a>编码效率</h5><p>R=k/n=(2<sup>r</sup>-1-r)/(2<sup>r</sup>-1)=1-(r/(2<sup>r</sup>-1))=1-r/n</p>
+<h4 id="循环码"><a href="#循环码" class="headerlink" title="循环码"></a>循环码</h4><p>把码长为n的码组与n-1次多项式建立一一对应的关系<br>若码组A=(a<sub>n-1</sub>,a<sub>n-2</sub>, … , a<sub>1</sub>,a<sub>0</sub>,)<br>则多项式为：A(x)=a<sub>n-1</sub>x<sup>n-1</sup>+a<sub>n-2</sub>x<sup>n-2</sup>+…+a<sub>1</sub>x+a<sub>0</sub></p>
+<p>如码组1100101对应的多项式为：<br>A<sub>7</sub>(x)=1 <em> x<sup>6</sup>+1 </em> x<sup>5</sup>+0<em> x<sup>4</sup>+0 </em> x<sup>3</sup>+1 <em> x<sup>2</sup>+0 </em> x+1</p>
+<p>循环冗余码CRC的编码步骤（发送端）<br>1）求M(x)所对应的码字，可先求M(x),  并乘以x<sup>n - k</sup>；<br>2）然后被G（x）除，求其余式；<br>3）得x<sup>r</sup> M（x）</p>
+<hr>
+<h2 id="HDLC与PPP协议"><a href="#HDLC与PPP协议" class="headerlink" title="HDLC与PPP协议"></a>HDLC与PPP协议</h2><h3 id="HDLC"><a href="#HDLC" class="headerlink" title="HDLC"></a>HDLC</h3><p>HDLC帧中存在多种 0/1 比特组合。<br>5个或5个以内连续1，或其他组合：正常数据。<br>01111110：帧标志 F，帧开始和结束标志，帧间填充，帧同步。<br>7~15个连续“1”：异常终止，丢弃此帧。<br>多于15个连续“1”：链路空闲，停止工作。<br>必须采取措施，实现 HDLC 帧中任意比特组合的传输，而不会造成误判。<br>采用“零比特自动插入/删除法”使一帧的两个 F 字段之间不会出现 6 个或6个以上连续 “1”。<br>在发送端，当一串比特流数据中有 5 个连续 1 时，就立即自动插入一个 “0”。<br>在接收帧时，先找到 F 字段以确定帧的边界。接着再对比特流进行扫描。每当发现 5 个连续 1 时，就将其后的一个 0 删除，以还原成原来的比特流。<br>采用<strong>零比特插入/删除法</strong>可传送任意组合的比特流，即实现数据链路层的<strong>透明传输</strong>。<br>当连续传输两个帧时，前一个帧的结束标志字段 F 可以兼作后一帧的起始标志字段。<br>当暂时没有信息传送时，可以连续发送标志字段，使收端可以一直和发端保持同步，同时表示链路处于工作状态。</p>
+<h4 id="HDLC的帧结构"><a href="#HDLC的帧结构" class="headerlink" title="HDLC的帧结构"></a>HDLC的帧结构</h4><ul>
+<li>信息字段  I<ul>
+<li>高层信息，如 IP 报文或其它信息</li>
+<li>长度可变，且无字段长度说明</li>
+<li>某些控制类帧可能无此字段</li>
+</ul>
+</li>
+<li>帧校验序列  FCS<ul>
+<li>差错控制，使用CRC校验</li>
+<li>长度16bit，也属于透明传输范围</li>
+</ul>
+</li>
+</ul>
+<h5 id="信息帧-（I帧）"><a href="#信息帧-（I帧）" class="headerlink" title="信息帧 （I帧）"></a>信息帧 （I帧）</h5><p><img src="http://o6yn3s5sy.bkt.clouddn.com/infozhen.png" alt="enter image description here"></p>
+<p>LSB 为 0 表明该帧是信息帧。<br>N(S) 号表明该帧的发送一个帧号。<br>N(R)号表明该帧的发送者期望接收的下一个帧号。<br>    （对N(R) －1 及以前各帧的确认）<br>3比特编码表示为模 8 方式。<br>利用信息帧携带确认信息可提高传送效率。</p>
+<h5 id="监视帧（S帧）"><a href="#监视帧（S帧）" class="headerlink" title="监视帧（S帧）"></a>监视帧（S帧）</h5><p>监视帧，又称监督帧，监控帧，用于数据传送阶段。实现流量控制和差错控制，保证数据传输的正常进行。<br>根据传输控制的需要，S帧有以下类型：</p>
+<ul>
+<li>RR         Receiver Ready        接收端准备好</li>
+<li>RNR    Receiver Not Ready    接收端未准备好</li>
+<li>REJ       Reject        帧拒绝（连续ARQ）</li>
+<li>SREJ   Select Reject        选择拒绝（选择ARQ）</li>
+</ul>
+<p><img src="http://o6yn3s5sy.bkt.clouddn.com/listernzhen.png" alt="enter image description here"></p>
+<p>N(R) 用于向发送方确认接收端所收到帧的序号。 N(R)表示该帧的发送者期望接收的下一个帧的序号，同时对  N(R) －1及以前各帧确认。</p>
+<h5 id="无编号帧（-U帧）"><a href="#无编号帧（-U帧）" class="headerlink" title="无编号帧（ U帧）"></a>无编号帧（ U帧）</h5><p>LSB 为 11 表明该帧是无编号帧（U帧）<br><img src="http://o6yn3s5sy.bkt.clouddn.com/nonumzhen.png" alt="enter image description here"></p>
+<h3 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h3><p>包含三个组成部分 </p>
+<ul>
+<li>将 IP 数据报封装到串行链路的方法。</li>
+<li>链路控制协议 LCP (Link Control Protocol)。</li>
+<li>网络控制协议 NCP (Network Control Protocol)。</li>
+</ul>
+<h4 id="PPP-协议的帧格式"><a href="#PPP-协议的帧格式" class="headerlink" title="PPP 协议的帧格式"></a>PPP 协议的帧格式</h4><p>PPP 的帧格式和 HDLC 的相似。<br>标志字段 F 仍为 0x7E （符号“0x”表示后面的字符是用十六进制表示。十六进制的 7E 的二进制表示是 01111110）。<br>地址字段 A 只置为 0xFF。地址字段实际上并不起作用。<br>控制字段 C 通常置为 0x03。</p>
+<p>PPP 有一个 2 个字节的协议字段，用于指示帧的信息字段中所携带的内容。<br>当协议字段为 0x0021 时，PPP 帧的信息字段就是IP 数据报。<br>若为 0xC021, 则信息字段是 PPP 链路控制数据。<br>若为 0x8021，则表示是网络控制数据。<br>信息字段无特别要求，其内容由协议字段说明，长度不超过1500字节。<br>使用16位帧校验。</p>
+<h4 id="PPP-的透明传输"><a href="#PPP-的透明传输" class="headerlink" title="PPP 的透明传输"></a>PPP 的透明传输</h4><p>PPP帧在传输过程中，同样需要考虑透明传输问题。即帧标志之间的比特组合。<br>当 PPP 用在同步传输链路时，协议规定采用硬件来完成比特填充（和 HDLC 的做法一样，零比特自动插入/删除）。<br>当 PPP 用在异步传输时，就使用一种特殊的字符填充法。<br>将信息字段中出现的每一个 0x7E 字节转变成为 2 字节序列（0x7D, 0x5E）。<br>若信息字段中出现一个 0x7D 的字节, 则将其转变成为 2 字节序列（0x7D, 0x5D）。<br>若信息字段中出现 ASCII 码的控制字符（即数值小于 0x20 的字符），则在该字符前面要加入一个 0x7D 字节，同时将该字符的编码加以改变。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机网络/" rel="tag">#计算机网络</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/08/computer_network/" rel="next" title="计算机网络">
+                <i class="fa fa-chevron-left"></i> 计算机网络
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/head_img.png"
+               alt="Junifer" />
+          <p class="site-author-name" itemprop="name">Junifer</p>
+          <p class="site-description motion-element" itemprop="description">诗和远方</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yuan0" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friends
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://shenyizhou.github.io/" title="Orion" target="_blank">Orion</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.importcjj.com" title="Signal" target="_blank">Signal</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhicongchen.github.io/" title="Let there be light" target="_blank">Let there be light</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据链路层"><span class="nav-number">1.</span> <span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功能"><span class="nav-number">1.2.</span> <span class="nav-text">功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流量控制和差错控制"><span class="nav-number">2.</span> <span class="nav-text">流量控制和差错控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#停止-等待流量控制方式"><span class="nav-number">2.1.</span> <span class="nav-text">停止-等待流量控制方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滑动窗口流量控制方式"><span class="nav-number">2.2.</span> <span class="nav-text">滑动窗口流量控制方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连续ARQ方式Automatic-Repeat-reQuest"><span class="nav-number">2.3.</span> <span class="nav-text">连续ARQ方式Automatic  Repeat-reQuest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择ARQ方式"><span class="nav-number">2.4.</span> <span class="nav-text">选择ARQ方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#差错控制"><span class="nav-number">2.5.</span> <span class="nav-text">差错控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#差错控制编码"><span class="nav-number">2.5.1.</span> <span class="nav-text">差错控制编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检错码"><span class="nav-number">2.5.2.</span> <span class="nav-text">检错码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#纠错码"><span class="nav-number">2.5.3.</span> <span class="nav-text">纠错码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#汉明码"><span class="nav-number">2.5.4.</span> <span class="nav-text">汉明码</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#编码效率"><span class="nav-number">2.5.4.1.</span> <span class="nav-text">编码效率</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环码"><span class="nav-number">2.5.5.</span> <span class="nav-text">循环码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDLC与PPP协议"><span class="nav-number">3.</span> <span class="nav-text">HDLC与PPP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HDLC"><span class="nav-number">3.1.</span> <span class="nav-text">HDLC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HDLC的帧结构"><span class="nav-number">3.1.1.</span> <span class="nav-text">HDLC的帧结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#信息帧-（I帧）"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">信息帧 （I帧）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#监视帧（S帧）"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">监视帧（S帧）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#无编号帧（-U帧）"><span class="nav-number">3.1.1.3.</span> <span class="nav-text">无编号帧（ U帧）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PPP"><span class="nav-number">3.2.</span> <span class="nav-text">PPP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PPP-协议的帧格式"><span class="nav-number">3.2.1.</span> <span class="nav-text">PPP 协议的帧格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PPP-的透明传输"><span class="nav-number">3.2.2.</span> <span class="nav-text">PPP 的透明传输</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junifer</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
