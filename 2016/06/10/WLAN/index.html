@@ -1,0 +1,796 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="计算机网络," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="局域网技术特性
+传输媒体——指用于连接网络设备的介质类型，常用的有双绞线、同轴电缆、光纤，以及微波、红外线和激光等无线传输媒体。 
+传输技术——指借助传输媒体进行数据通信的技术，常用的有基带传输和宽带传输两种。  
+网络拓扑——指物理结构和形状。  
+媒体访问控制方法——指多台计算机对传输媒体的访问控制方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="局域网与广域网">
+<meta property="og:url" content="http://yoursite.com/2016/06/10/WLAN/index.html">
+<meta property="og:site_name" content="Hello :)">
+<meta property="og:description" content="局域网技术特性
+传输媒体——指用于连接网络设备的介质类型，常用的有双绞线、同轴电缆、光纤，以及微波、红外线和激光等无线传输媒体。 
+传输技术——指借助传输媒体进行数据通信的技术，常用的有基带传输和宽带传输两种。  
+网络拓扑——指物理结构和形状。  
+媒体访问控制方法——指多台计算机对传输媒体的访问控制方法。">
+<meta property="og:updated_time" content="2016-06-10T06:35:22.435Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="局域网与广域网">
+<meta name="twitter:description" content="局域网技术特性
+传输媒体——指用于连接网络设备的介质类型，常用的有双绞线、同轴电缆、光纤，以及微波、红外线和激光等无线传输媒体。 
+传输技术——指借助传输媒体进行数据通信的技术，常用的有基带传输和宽带传输两种。  
+网络拓扑——指物理结构和形状。  
+媒体访问控制方法——指多台计算机对传输媒体的访问控制方法。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 局域网与广域网 | Hello :) </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hello :)</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">MDZZ</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demos">
+          <a href="/demos" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            演示
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                局域网与广域网
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-10T14:31:11+08:00" content="2016-06-10">
+              2016-06-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="局域网"><a href="#局域网" class="headerlink" title="局域网"></a>局域网</h2><h3 id="技术特性"><a href="#技术特性" class="headerlink" title="技术特性"></a>技术特性</h3><ul>
+<li>传输媒体——指用于连接网络设备的介质类型，常用的有双绞线、同轴电缆、光纤，以及微波、红外线和激光等无线传输媒体。 </li>
+<li>传输技术——指借助传输媒体进行数据通信的技术，常用的有基带传输和宽带传输两种。  </li>
+<li>网络拓扑——指物理结构和形状。  </li>
+<li>媒体访问控制方法——指多台计算机对传输媒体的访问控制方法。</li>
+</ul>
+<a id="more"></a>
+<h3 id="相关标准"><a href="#相关标准" class="headerlink" title="相关标准"></a>相关标准</h3><p>IEEE 802</p>
+<h4 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA/CD协议"></a>CSMA/CD协议</h4><p>CSMA/CD协议即带冲突检测的CSMA协议。<br>CSMA/CD协议中，有<u>争用</u>、<u>传输</u>、<u>空闲</u>三种状态。</p>
+<p>当两个侦听到信道空闲并同时开始发送数据时，就会检测到冲突。一旦检测到冲突，就立即终止冲突帧的发送，然后等待一个随机的时间后，重新尝试发送。</p>
+<h5 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h5><ul>
+<li>载波监听<br>任一站要发送信息时，首先要监测总线，用来判决介质上有否其他站的发送信号。如果介质状态忙，则继续检测，直到发现介质空闲。如果检测介质为空闲，则可以立即发送。</li>
+<li>多路访问（多次访问）<br>意思是网络上所有主机收发数据共同使用同一条总线，且发送数据是广播式的。 </li>
+<li>冲突检测<br>每个站在发送帧期间，同时具有检测冲突的能力。一旦检测到冲突，就立即停止发送，并向总线上发一串阻塞信号，通报总线上各站已发生冲突。</li>
+</ul>
+<h5 id="争用期"><a href="#争用期" class="headerlink" title="争用期"></a>争用期</h5><p>假设有一个以同轴电缆为传输介质的总线型局域网，其上有A、B两台计算机，两者之间的电缆长度为L(m)，总线型局域网的数据传输速率C(bps)，电磁波在同轴电缆中的传播速率为v=2*10<sup>8</sup>m/s。将总线上的端到端单程传播时延记为&tau;，<br>其中，&tau;=L/v。</p>
+<p>总线型局域网的端到端往返时延 2&tau; 称为<strong>争用期</strong>，也称为冲突窗口。</p>
+<h5 id="最短帧的计算"><a href="#最短帧的计算" class="headerlink" title="最短帧的计算"></a>最短帧的计算</h5><p>最短帧长为争用期内传输的比特数：<br>L<sub>min</sub>=2&tau;*C</p>
+<h5 id="以太网MAC帧格式"><a href="#以太网MAC帧格式" class="headerlink" title="以太网MAC帧格式"></a>以太网MAC帧格式</h5><table>
+<thead>
+<tr>
+<th>以太网DIX v2 标准</th>
+<th>字段长度(字节)</th>
+<th>IEEE 802.3 标准</th>
+<th>字段长度(字节)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前导符字段(P)</td>
+<td>7</td>
+<td>前导符字段(P)</td>
+<td>7</td>
+</tr>
+<tr>
+<td>帧开始标志(SFD)</td>
+<td>1</td>
+<td>帧开始标志(SFD)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>目的地址(DA)</td>
+<td>6</td>
+<td>目的地址(DA)</td>
+<td>2 or 6</td>
+</tr>
+<tr>
+<td>源地址(SA)</td>
+<td>6</td>
+<td>源地址(SA)</td>
+<td>2 or 6</td>
+</tr>
+<tr>
+<td>数据类型(T)</td>
+<td>2</td>
+<td>数据长度(L)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>用户数据(DATA)</td>
+<td>&lt;=1500</td>
+<td>用户数据(DATA)</td>
+<td>&lt;=1500</td>
+</tr>
+<tr>
+<td>填充字段(PAD)</td>
+<td>&lt;=46</td>
+<td>填充字段(PAD)</td>
+<td>&lt;=46</td>
+</tr>
+<tr>
+<td>帧校验序列(FCS)</td>
+<td>4</td>
+<td>帧校验序列(FCS)</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h5 id="信道利用率"><a href="#信道利用率" class="headerlink" title="信道利用率"></a>信道利用率</h5><p>假设争用期长度为2&tau;，帧长为L bit，数据发送速率为C bit/s，帧间间隔为&tau;，即发送成功后要经过时间τ使信道转为空闲才发送下一帧。<br>假设检测到冲突后并不发送冲突加强信号。总线局域网上共有N个站，每个站发送帧的概率都是 p。帧发送时延为T<sub>0</sub>=L/C (s)。争用期平均个数为N<sub>c</sub>。<br>发送一帧所需的平均时间为T<sub>av</sub> ，则<br>T<sub>av</sub> = 2&tau; <em> N<sub>c</sub>+T<sub>0</sub>+&tau;<br>一帧的发送时延为T<sub>0</sub>，所以CSMA/CD方式下局域网平均信道利用率(也称为归一化吞吐量)为：<br>&eta; = T<sub>0</sub>/T<sub>av</sub> = T<sub>0</sub>/(2&tau; </em> N<sub>c</sub>+T<sub>0</sub>+&tau;)</p>
+<h3 id="以太网级联与扩展"><a href="#以太网级联与扩展" class="headerlink" title="以太网级联与扩展"></a>以太网级联与扩展</h3><h4 id="在物理层扩展局域网"><a href="#在物理层扩展局域网" class="headerlink" title="在物理层扩展局域网"></a>在物理层扩展局域网</h4><p>用<strong>集线器</strong>在物理层扩展局域网，扩大了局域网覆盖的地理范围，使不同部门局域网的计算机可以相互通信。但需要注意的是，用集线器连接起来的局域网构成了一个更大的冲突域，最大总吞吐量并没有提高。</p>
+<h4 id="在数据链路层扩展局域网"><a href="#在数据链路层扩展局域网" class="headerlink" title="在数据链路层扩展局域网"></a>在数据链路层扩展局域网</h4><p>当连接多个不同类型的局域网时，就需要在数据链路层扩展局域网，使用的设备为<strong>网桥</strong>。<br>网桥工作在数据链路层，它根据 MAC 帧的目的地址对收到的帧进行转发。<br>网桥具有过滤帧的功能。当网桥收到一个帧时，并不是向所有的端口转发此帧，而是先检查此帧的目的 MAC 地址，然后再确定将该帧转发到哪一个端口。 </p>
+<h3 id="以太网交换机"><a href="#以太网交换机" class="headerlink" title="以太网交换机"></a>以太网交换机</h3><h4 id="转发方式及其特点"><a href="#转发方式及其特点" class="headerlink" title="转发方式及其特点"></a>转发方式及其特点</h4><p><strong>直通交换方式</strong><br>  不必将整个数据帧先缓存再进行处理，而是在接收数据帧的同时就立即按数据帧的目的MAC地址决定该帧的转发端口，因而提高了帧的转发速度。<br>  缺点是不检查差错就直接将帧转发出去，因此有可能也将一些无效帧转发给其他的站。</p>
+<p><strong>存储转发方式</strong><br>  需要将帧完全接受和缓存下来，然后根据帧头部的目的MAC地址进行转发。</p>
+<p><strong>无碎片交换方式</strong><br>  实际上是直通方式的一种改进，要求交换机只有在收到64字节以后才开始以直通方式转发帧，从而避免转发发生冲突而造成的碎片帧。</p>
+<h4 id="高速以太网"><a href="#高速以太网" class="headerlink" title="高速以太网"></a>高速以太网</h4><p>随着技术的发展，以太网支持的数据传输速率越来越高，速率在100Mb/s及以上的以太网一般称为高速以太网，如：</p>
+<ul>
+<li>100BASE-T以太网</li>
+<li>千兆以太网</li>
+<li>万兆以太网（10Gbit/s以太网）</li>
+</ul>
+<h3 id="虚拟局域网VLAN"><a href="#虚拟局域网VLAN" class="headerlink" title="虚拟局域网VLAN"></a>虚拟局域网VLAN</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>虚拟局域网（VLAN）是在现有局域网上提供的<strong>划分逻辑组</strong>的一种服务，由IEEE 802.1Q标准进行了规定。<br>虚拟局域网是由一些局域网网段构成的与<strong>物理位置无关的逻辑组</strong>，而这些网段具有某些共同的需求。<br>每一个VLAN的帧都有一个不同的<strong>标识符</strong>，指明发送这个帧的工作站是属于哪一个VLAN。<br>利用<strong>以太网交换机</strong>可以很方便地实现虚拟局域网VLAN。</p>
+<h4 id="划分方法"><a href="#划分方法" class="headerlink" title="划分方法"></a>划分方法</h4><p>通过在以大网的帧格式中插入一个称为<strong>VLAN标记</strong>的<strong>4字节标识符</strong>，用来指明发送该帧的工作站属于哪一个虚拟局域网，实现逻辑组的划分。</p>
+<hr>
+<h2 id="广域网"><a href="#广域网" class="headerlink" title="广域网"></a>广域网</h2><h3 id="虚电路和数据报比较"><a href="#虚电路和数据报比较" class="headerlink" title="虚电路和数据报比较"></a>虚电路和数据报比较</h3><table>
+<thead>
+<tr>
+<th>特点</th>
+<th>数据报服务</th>
+<th>虚电路服务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>思路</td>
+<td>可靠通信应由用户主机来保证</td>
+<td>可靠通信应由网络来保证</td>
+</tr>
+<tr>
+<td>连接的建立</td>
+<td>不需要</td>
+<td>必须有</td>
+</tr>
+<tr>
+<td>目的站地址</td>
+<td>每个分组都有目的站的全地址</td>
+<td>仅在连接建立阶段使用，每个分组使用短的虚电路号</td>
+</tr>
+<tr>
+<td>分组的转发</td>
+<td>每个分组独立进行路由、转发</td>
+<td>属于同一虚电路的所有分组均按照同一路由进行转发</td>
+</tr>
+<tr>
+<td>当结点出故障时</td>
+<td>出故障的结点可能会丢失分组，后续分组将改变路由</td>
+<td>所有通过出故障结点的虚电路均不能工作</td>
+</tr>
+<tr>
+<td>分组的顺序</td>
+<td>不一定按发送顺序到达目的站</td>
+<td>总是按发送顺序到达目的站</td>
+</tr>
+<tr>
+<td>端到端的差错处理和流量控制</td>
+<td>由用户主机负责</td>
+<td>可以由网络负责，也可以由用户主机负责</td>
+</tr>
+</tbody>
+</table>
+<h3 id="广域网技术"><a href="#广域网技术" class="headerlink" title="广域网技术"></a>广域网技术</h3><h4 id="X-25分组交换网"><a href="#X-25分组交换网" class="headerlink" title="X.25分组交换网"></a>X.25分组交换网</h4><p>CCITT在上个世纪70年代制订了公用分组交换网接口的建议，即X.25标准。<br>遵循X.25标准设计的网络为X.25分组交换网，简称X.25网。<br>X.25标准制订了<strong>面向连接的虚电路服务</strong>的服务规范，主要对<strong>公用分组交换网的接口</strong>进行了定义。</p>
+<h4 id="帧中继"><a href="#帧中继" class="headerlink" title="帧中继"></a>帧中继</h4><p>帧中继(Frame Relay)采用<strong>快速分组交换技术</strong>，是对X.25网络的改进，被称为第二代的X.25，于1992年问世。<br>帧中继网络提供<strong>虚电路服务</strong>，可以用来为互联网提供具有相对高速率的链路。</p>
+<h4 id="ATM"><a href="#ATM" class="headerlink" title="ATM"></a>ATM</h4><p>异步传递方式ATM(Asynchronous Transfer Mode)是建立在<strong>电路交换和分组交换</strong>的基础上的—种<strong>面向连接的快速分组交换技术</strong>。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机网络/" rel="tag">#计算机网络</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/09/data_link_layer/" rel="next" title="数据链路层">
+                <i class="fa fa-chevron-left"></i> 数据链路层
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/head_img.png"
+               alt="Junifer" />
+          <p class="site-author-name" itemprop="name">Junifer</p>
+          <p class="site-description motion-element" itemprop="description">诗和远方</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yuan0" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friends
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://shenyizhou.github.io/" title="Orion" target="_blank">Orion</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.importcjj.com" title="Signal" target="_blank">Signal</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhicongchen.github.io/" title="Let there be light" target="_blank">Let there be light</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#局域网"><span class="nav-number">1.</span> <span class="nav-text">局域网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#技术特性"><span class="nav-number">1.1.</span> <span class="nav-text">技术特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关标准"><span class="nav-number">1.2.</span> <span class="nav-text">相关标准</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSMA-CD协议"><span class="nav-number">1.2.1.</span> <span class="nav-text">CSMA/CD协议</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#原理"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#争用期"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">争用期</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最短帧的计算"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">最短帧的计算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#以太网MAC帧格式"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">以太网MAC帧格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#信道利用率"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">信道利用率</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以太网级联与扩展"><span class="nav-number">1.3.</span> <span class="nav-text">以太网级联与扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在物理层扩展局域网"><span class="nav-number">1.3.1.</span> <span class="nav-text">在物理层扩展局域网</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在数据链路层扩展局域网"><span class="nav-number">1.3.2.</span> <span class="nav-text">在数据链路层扩展局域网</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以太网交换机"><span class="nav-number">1.4.</span> <span class="nav-text">以太网交换机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#转发方式及其特点"><span class="nav-number">1.4.1.</span> <span class="nav-text">转发方式及其特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高速以太网"><span class="nav-number">1.4.2.</span> <span class="nav-text">高速以太网</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟局域网VLAN"><span class="nav-number">1.5.</span> <span class="nav-text">虚拟局域网VLAN</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念"><span class="nav-number">1.5.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#划分方法"><span class="nav-number">1.5.2.</span> <span class="nav-text">划分方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广域网"><span class="nav-number">2.</span> <span class="nav-text">广域网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#虚电路和数据报比较"><span class="nav-number">2.1.</span> <span class="nav-text">虚电路和数据报比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广域网技术"><span class="nav-number">2.2.</span> <span class="nav-text">广域网技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#X-25分组交换网"><span class="nav-number">2.2.1.</span> <span class="nav-text">X.25分组交换网</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#帧中继"><span class="nav-number">2.2.2.</span> <span class="nav-text">帧中继</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ATM"><span class="nav-number">2.2.3.</span> <span class="nav-text">ATM</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junifer</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
