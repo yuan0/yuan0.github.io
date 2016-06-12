@@ -1,0 +1,757 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="UML," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="UML(3)Class diagramVisibilityVisibility specifies whether or not the objects of a class can access the attributes and operations of another class.
+
++(public) : Indicates that the attribute or operatio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UML(3)">
+<meta property="og:url" content="http://yoursite.com/2016/06/13/uml_3/index.html">
+<meta property="og:site_name" content="Hello :)">
+<meta property="og:description" content="UML(3)Class diagramVisibilityVisibility specifies whether or not the objects of a class can access the attributes and operations of another class.
+
++(public) : Indicates that the attribute or operatio">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/aggregation.png">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/composition.png">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/dependency.png">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/generalization.png">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/realization.png">
+<meta property="og:updated_time" content="2016-06-12T16:09:30.281Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UML(3)">
+<meta name="twitter:description" content="UML(3)Class diagramVisibilityVisibility specifies whether or not the objects of a class can access the attributes and operations of another class.
+
++(public) : Indicates that the attribute or operatio">
+<meta name="twitter:image" content="http://o6yn3s5sy.bkt.clouddn.com/aggregation.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> UML(3) | Hello :) </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hello :)</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">MDZZ</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demos">
+          <a href="/demos" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            演示
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                UML(3)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-13T00:08:12+08:00" content="2016-06-13">
+              2016-06-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="UML-3"><a href="#UML-3" class="headerlink" title="UML(3)"></a>UML(3)</h1><h2 id="Class-diagram"><a href="#Class-diagram" class="headerlink" title="Class diagram"></a>Class diagram</h2><h3 id="Visibility"><a href="#Visibility" class="headerlink" title="Visibility"></a>Visibility</h3><p>Visibility specifies whether or not the objects of a class can access the attributes and operations of another class.</p>
+<ul>
+<li>+(public) : Indicates that the attribute or operation is visible to other classes.</li>
+<li>-(private) : Indicates that the attribute or operation is <strong>not</strong> visible to other classes.</li>
+<li>#(protected) : Indicates that the attribute or operation is  visible to <strong>derived</strong> classes.</li>
+<li>~ : Indicates that the attribute or operation is not visible to the classes. which are within the same package.</li>
+</ul>
+<a id="more"></a>
+<h3 id="Relationship-among-classes-and-objects"><a href="#Relationship-among-classes-and-objects" class="headerlink" title="Relationship among classes and objects"></a>Relationship among classes and objects</h3><ul>
+<li>Association<ul>
+<li>Aggregation : represents an association between 2 classes such that class A is part of class B and class A can exist independently.<ul>
+<li><img src="http://o6yn3s5sy.bkt.clouddn.com/aggregation.png" alt="aggregation"></li>
+</ul>
+</li>
+<li>Composition : represents an association between 2 classes such that class A contains class B and also controls the lifetime of class B.<ul>
+<li><img src="http://o6yn3s5sy.bkt.clouddn.com/composition.png" alt="composition"> </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Dependency : represents the semantic relationship between 2 classes such that a change in the attributes and operations of one class affects the attributes and operations of the other class,<br><img src="http://o6yn3s5sy.bkt.clouddn.com/dependency.png" alt="enter image description here"></li>
+<li>Generalization<br><img src="http://o6yn3s5sy.bkt.clouddn.com/generalization.png" alt="generalization"></li>
+<li>Realization<br><img src="http://o6yn3s5sy.bkt.clouddn.com/realization.png" alt="realization"></li>
+</ul>
+<h3 id="Types-of-class"><a href="#Types-of-class" class="headerlink" title="Types of class"></a>Types of class</h3><ul>
+<li>Abstract class</li>
+<li>Parameterized class</li>
+<li>Factory class</li>
+<li>Self-linked class</li>
+</ul>
+<h4 id="Abstract-class"><a href="#Abstract-class" class="headerlink" title="Abstract class"></a>Abstract class</h4><p>An abstract class is a class that does not have any direct instances.<br>However, the classed inherited from an abstract class can have direct instances.<br>An abstract class is used to define the common features and common behavior of a set of subclasses.</p>
+<h4 id="Parameterized-class"><a href="#Parameterized-class" class="headerlink" title="Parameterized class"></a>Parameterized class</h4><p>A parameterized class, also called template class, provide a <strong>mechanism</strong> that enables you to use operations and classes to work with different data type.<br>A parameterized class consists of type parameters that are unbounded, which means that the data types of the parameters are not defined in the parameterized class.<br>U can not create the objs of a parameterized class. To use the functions defined in the parameterized class, u need to realize the parameterized class by using classes.</p>
+<h2 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h2><p>An interface is a collection of operations that are used to represent the services provided by a class or component.</p>
+<h2 id="Compare-between-static-and-dynamic-modeling"><a href="#Compare-between-static-and-dynamic-modeling" class="headerlink" title="Compare between static and dynamic modeling"></a>Compare between static and dynamic modeling</h2><table>
+<thead>
+<tr>
+<th>Static Modeling</th>
+<th>Dynamic Modeling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>It represents the <strong>static or structural constituents</strong> of a software system. Therefore, it is also known as <strong>structural modeling</strong>.</td>
+<td>It represents the <strong>behavior</strong>of a software system. Therefore, it is also known as <strong>behavior modeling</strong>.</td>
+</tr>
+<tr>
+<td>It includes <strong>class and object</strong> diagrams</td>
+<td>It includes <strong>interaction, activity, and state</strong> diagrams.</td>
+</tr>
+<tr>
+<td>It helps in depicting the <strong>relationships and dependencies</strong> between the <strong>consitituents</strong> of a system.</td>
+<td>It helps in expressing and modeling the <strong>behavior</strong> of a system over a period of time.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Sequence-diagram"><a href="#Sequence-diagram" class="headerlink" title="Sequence diagram"></a>Sequence diagram</h2><p>Sequence diagrams represent an interaction among objects in the form of messages ordered in a sequence by time.</p>
+<h2 id="Communication-diagram"><a href="#Communication-diagram" class="headerlink" title="Communication diagram"></a>Communication diagram</h2><p>Communication diagrams represents the interaction among objects in the form of messages.<br>It is also known as <strong>Collaboration</strong> diagram.</p>
+<h2 id="Event-types"><a href="#Event-types" class="headerlink" title="Event types"></a>Event types</h2><p>Events that act as triggers:</p>
+<ul>
+<li>Call event</li>
+<li>Signal event</li>
+<li>Time event</li>
+</ul>
+<h2 id="State-diagram"><a href="#State-diagram" class="headerlink" title="State diagram"></a>State diagram</h2><h2 id="Expansion-region-Flow-Final-and-Join-Specification"><a href="#Expansion-region-Flow-Final-and-Join-Specification" class="headerlink" title="Expansion region, Flow Final and Join Specification"></a>Expansion region, Flow Final and Join Specification</h2><h3 id="Fork-and-join"><a href="#Fork-and-join" class="headerlink" title="Fork and join"></a>Fork and join</h3><p>U can use a fork to model parallel flows.<br>At joins, two or more concurrent flows combine to form a flow.</p>
+<h2 id="Architecture-modeling"><a href="#Architecture-modeling" class="headerlink" title="Architecture modeling"></a>Architecture modeling</h2><p>Architecture modeling is used to depict the physical constituents of a software system.</p>
+<h2 id="Types-of-components"><a href="#Types-of-components" class="headerlink" title="Types of components"></a>Types of components</h2><ul>
+<li>Deployment components: DLLs,EXEs</li>
+<li>Work product components: the source dode files and data files </li>
+<li>Execution components: COM+ objects</li>
+</ul>
+<h2 id="Framework-VS-Pattern-factory-observer"><a href="#Framework-VS-Pattern-factory-observer" class="headerlink" title="Framework VS Pattern ( factory, observer)"></a>Framework VS Pattern ( factory, observer)</h2><p>Framework : defines the features that are common to similar applications belonging to a particular domain<br>Pattern : a set of principles and guidelines that provide the standard solution to a given problem. </p>
+<p>GRASP: a set of patterns that provides the principles of assigning responsibilities to objects.<br>GoF patterns are based on <strong>open-close</strong> priciple, which suggests that the design should be open to extension and close to modification.<br>GoF are broadly into 3 categorized:</p>
+<ul>
+<li>Creational<ul>
+<li><strong>Factory</strong></li>
+<li>Builder</li>
+<li>Singleton </li>
+</ul>
+</li>
+<li>Structural<ul>
+<li>Composite</li>
+<li>Proxy</li>
+<li>Decorator</li>
+<li>Facade </li>
+</ul>
+</li>
+<li>Behavioral<ul>
+<li>Chain of Resposibility</li>
+<li>Command</li>
+<li><strong>Observer</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="Quality-process-three-dimension"><a href="#Quality-process-three-dimension" class="headerlink" title="Quality process (three dimension)"></a>Quality process (three dimension)</h2><p>What——Technology: describes the <strong>tools</strong> required for the software development process and the output generated.<br>How——Methodology: describes the <strong>sequence of actions</strong> that need to be performed during the software development process to generate output.<br>Who——Sociology: describes the <strong>human resources</strong> ,environmental conditions, and skills required for the software development process.</p>
+<h2 id="Process-component"><a href="#Process-component" class="headerlink" title="Process component"></a>Process component</h2><ul>
+<li>role</li>
+<li>Activity</li>
+<li>Task: atomic</li>
+<li>Output</li>
+<li>Iteration</li>
+</ul>
+<h2 id="Adjustment-factor"><a href="#Adjustment-factor" class="headerlink" title="Adjustment factor"></a>Adjustment factor</h2><p>Adjustment factor =actual productivity / planned productivity   ( 1500/2000=0.75)</p>
+<h2 id="FP-technology"><a href="#FP-technology" class="headerlink" title="FP technology"></a>FP technology</h2><p>TUFP(total unadjusted FP) = Sum of Data FPs + Sum of Transaction FPs<br>TDI  (total degree of influence)  ：  将每个GSC的DI值相加的总和<br>VAF ＝ TDI <em>0.01+0.65<br>AFP ＝（TUFP + CFP） </em> VAF （CFP 可以没有）</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/UML/" rel="tag">#UML</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/10/WLAN/" rel="next" title="局域网与广域网">
+                <i class="fa fa-chevron-left"></i> 局域网与广域网
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/head_img.png"
+               alt="Junifer" />
+          <p class="site-author-name" itemprop="name">Junifer</p>
+          <p class="site-description motion-element" itemprop="description">诗和远方</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yuan0" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friends
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://shenyizhou.github.io/" title="Orion" target="_blank">Orion</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.importcjj.com" title="Signal" target="_blank">Signal</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhicongchen.github.io/" title="Let there be light" target="_blank">Let there be light</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UML-3"><span class="nav-number">1.</span> <span class="nav-text">UML(3)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Class-diagram"><span class="nav-number">1.1.</span> <span class="nav-text">Class diagram</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Visibility"><span class="nav-number">1.1.1.</span> <span class="nav-text">Visibility</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Relationship-among-classes-and-objects"><span class="nav-number">1.1.2.</span> <span class="nav-text">Relationship among classes and objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-class"><span class="nav-number">1.1.3.</span> <span class="nav-text">Types of class</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Abstract-class"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">Abstract class</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Parameterized-class"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">Parameterized class</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interface"><span class="nav-number">1.2.</span> <span class="nav-text">Interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compare-between-static-and-dynamic-modeling"><span class="nav-number">1.3.</span> <span class="nav-text">Compare between static and dynamic modeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sequence-diagram"><span class="nav-number">1.4.</span> <span class="nav-text">Sequence diagram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Communication-diagram"><span class="nav-number">1.5.</span> <span class="nav-text">Communication diagram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-types"><span class="nav-number">1.6.</span> <span class="nav-text">Event types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#State-diagram"><span class="nav-number">1.7.</span> <span class="nav-text">State diagram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Expansion-region-Flow-Final-and-Join-Specification"><span class="nav-number">1.8.</span> <span class="nav-text">Expansion region, Flow Final and Join Specification</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fork-and-join"><span class="nav-number">1.8.1.</span> <span class="nav-text">Fork and join</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Architecture-modeling"><span class="nav-number">1.9.</span> <span class="nav-text">Architecture modeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Types-of-components"><span class="nav-number">1.10.</span> <span class="nav-text">Types of components</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Framework-VS-Pattern-factory-observer"><span class="nav-number">1.11.</span> <span class="nav-text">Framework VS Pattern ( factory, observer)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quality-process-three-dimension"><span class="nav-number">1.12.</span> <span class="nav-text">Quality process (three dimension)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-component"><span class="nav-number">1.13.</span> <span class="nav-text">Process component</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adjustment-factor"><span class="nav-number">1.14.</span> <span class="nav-text">Adjustment factor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FP-technology"><span class="nav-number">1.15.</span> <span class="nav-text">FP technology</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junifer</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
