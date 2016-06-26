@@ -1,0 +1,764 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="计算机网络," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="IP地址IP地址：给每个连接在因特网上的主机分配一个在全世界范围是惟一的32 bit 的标识符。网络地址实际上是表示主机到网络的一个连接。IP地址由因特网名字与号码指派公司ICANN 分配。IP地址采用分层的地址结构：前缀＋后缀IP 地址 = [ 网络号，子网号，主机号  ]
+分类A 类0 Netid Hostid（24比特）B 类10 Netid Hostid（16比特）C 类110 Netid">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络层与网络互连">
+<meta property="og:url" content="http://yoursite.com/2016/06/16/web_connect_layer/index.html">
+<meta property="og:site_name" content="Hello :)">
+<meta property="og:description" content="IP地址IP地址：给每个连接在因特网上的主机分配一个在全世界范围是惟一的32 bit 的标识符。网络地址实际上是表示主机到网络的一个连接。IP地址由因特网名字与号码指派公司ICANN 分配。IP地址采用分层的地址结构：前缀＋后缀IP 地址 = [ 网络号，子网号，主机号  ]
+分类A 类0 Netid Hostid（24比特）B 类10 Netid Hostid（16比特）C 类110 Netid">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/shujubao.png">
+<meta property="og:updated_time" content="2016-06-26T05:24:52.406Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络层与网络互连">
+<meta name="twitter:description" content="IP地址IP地址：给每个连接在因特网上的主机分配一个在全世界范围是惟一的32 bit 的标识符。网络地址实际上是表示主机到网络的一个连接。IP地址由因特网名字与号码指派公司ICANN 分配。IP地址采用分层的地址结构：前缀＋后缀IP 地址 = [ 网络号，子网号，主机号  ]
+分类A 类0 Netid Hostid（24比特）B 类10 Netid Hostid（16比特）C 类110 Netid">
+<meta name="twitter:image" content="http://o6yn3s5sy.bkt.clouddn.com/shujubao.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 网络层与网络互连 | Hello :) </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hello :)</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">MDZZ</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-demos">
+          <a href="/demos" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            演示
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                网络层与网络互连
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-16T17:31:11+08:00" content="2016-06-16">
+              2016-06-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/16/web_connect_layer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/16/web_connect_layer/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><p>IP地址：给每个连接在因特网上的主机分配一个在全世界范围是惟一的32 bit 的标识符。<br>网络地址实际上是表示主机到网络的一个连接。<br>IP地址由因特网名字与号码指派公司ICANN 分配。<br>IP地址采用分层的地址结构：前缀＋后缀<br>IP 地址 = [ 网络号，子网号，主机号  ]</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>A 类0 Netid Hostid（24比特）<br>B 类10 Netid Hostid（16比特）<br>C 类110 Netid Hostid（8比特）<br>D 类1110 组播地址<br>E 类11110 保留为今后使用</p>
+<table>
+<thead>
+<tr>
+<th>网络类别</th>
+<th>最大 网络数</th>
+<th>第一个可用的网络号</th>
+<th>最后一个可用的网络号</th>
+<th>网络最大主机数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>126 (27 – 2)</td>
+<td>1</td>
+<td>126</td>
+<td>16,777,214</td>
+</tr>
+<tr>
+<td>B</td>
+<td>16,384 (214)</td>
+<td>128.0</td>
+<td>191.255</td>
+<td>65,534</td>
+</tr>
+<tr>
+<td>C</td>
+<td>2,097,152 (221)</td>
+<td>192.0.0</td>
+<td>223.255.255</td>
+<td>254</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>特殊IP地址</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[网络号，0]</td>
+<td>指定的网络地址</td>
+</tr>
+<tr>
+<td>[网络号，&lt; -1 &gt;]</td>
+<td>定向广播地址</td>
+</tr>
+<tr>
+<td>[&lt;-1 &gt;, &lt;-1&gt;]</td>
+<td>有限广播地址</td>
+</tr>
+<tr>
+<td>[0 ,0]</td>
+<td>本主机</td>
+</tr>
+<tr>
+<td>[0 ,主机号]</td>
+<td>本网络上的某主机</td>
+</tr>
+<tr>
+<td>[127 ,&lt;任意&gt;]</td>
+<td>回送地址</td>
+</tr>
+</tbody>
+</table>
+<h3 id="IP地址和硬件地址的联系与区别"><a href="#IP地址和硬件地址的联系与区别" class="headerlink" title="IP地址和硬件地址的联系与区别"></a>IP地址和硬件地址的联系与区别</h3><p>不管网络层使用的是什么协议，在实际物理网络的链路上传送数据帧时，最终还是必须使用硬件地址。<br>地址统一(网络层以上使用IP地址)的代价是需要<strong>建立 IP 地址和物理地址之间的映射</strong>。<br>地址解析协议<strong>ARP</strong>为网络层(IP)地址 和数据链路层使用的任何类型的地址提供动态映射。</p>
+<p>IP地址是数据链路层的地址，硬件地址称为MAC地址，是主机物理层的地址，对应不同协议。IP地址主要用于确定主机的拓扑位置，物理地址是区分不同主机的编号。</p>
+<h3 id="IP数据报格式"><a href="#IP数据报格式" class="headerlink" title="IP数据报格式"></a>IP数据报格式</h3><p>一个 IP 数据报由首部（报头）和数据两部分组成。<br>首部的前一部分是固定部分，共20字节，是所有 IP 数据报必须具有的。<br>在首部的固定部分的后面是一些可选字段，其长度是可变的。<br> IP 数据报首部的固定部分和可选字段长度之和最大为 60 字节。</p>
+<p><img src="http://o6yn3s5sy.bkt.clouddn.com/shujubao.png" alt="enter image description here"></p>
+<h3 id="IP数据报分片原理与计算"><a href="#IP数据报分片原理与计算" class="headerlink" title="IP数据报分片原理与计算"></a>IP数据报分片原理与计算</h3><p>IP分片是网络上传输IP报文的一种技术手段。IP协议在传输数据包时，将数据报文分为若干分片进行传输，并在目标系统中进行重组。这一过程称为分片（ fragmentation）。</p>
+<p>标志字段在分片数据报中起了很大作用，在数据报分片时把它的值复制到每片中。标志字段的其中一个比特称作“不分片”位，用其中一个比特来表示“更多的片”。除了最后一片外，其他每个组成数据报的片都要把该比特置1。<br><strong>片偏移字段</strong>指的是该片偏移原始数据报开始处的位置。（以8个字节为单位）</p>
+<h2 id="因特网控制报文协议ICMP及其应用"><a href="#因特网控制报文协议ICMP及其应用" class="headerlink" title="因特网控制报文协议ICMP及其应用"></a>因特网控制报文协议ICMP及其应用</h2><p>为了提高 IP 数据报交付成功的机会，在<u>网际层</u>使用了因特网控制报文协议 ICMP (Internet Control Message Protocol)。<br>ICMP 允许主机或路由器向源站报告差错情况和异常情况，还包括提供信息的功能。<br>ICMP 不是高层协议，而是 IP 层的协议。<br>ICMP报文分为两大类：差错报告报文和提供信息的报文。</p>
+<h2 id="划分子网的计算过程和步骤"><a href="#划分子网的计算过程和步骤" class="headerlink" title="划分子网的计算过程和步骤"></a>划分子网的计算过程和步骤</h2><p>在设计选择子网划分方案时，必须考虑5个问题：<br>（1）该网络内将划分几个子网？<br>          子网数&lt;= 2<sup>x</sup>-2（除去子网位全0和全1情形，因为它们默认是无效的）<br>（2）每个子网有多少有效主机？<br>（3）在该子网划分中，子网掩码是什么？<br>（4）有效的子网地址是什么？<br>（5）每个子网的广播地址是什么？</p>
+<h2 id="CIDR原理、地址块的分配、路由聚合技术，以及最长前缀匹配"><a href="#CIDR原理、地址块的分配、路由聚合技术，以及最长前缀匹配" class="headerlink" title="CIDR原理、地址块的分配、路由聚合技术，以及最长前缀匹配"></a>CIDR原理、地址块的分配、路由聚合技术，以及最长前缀匹配</h2><h3 id="CIDR原理"><a href="#CIDR原理" class="headerlink" title="CIDR原理"></a>CIDR原理</h3><p>CIDR 消除了传统的 A 类、B 类和 C 类地址以及划分子网的概念，因而可以更加有效地分配 IPv4 的地址空间。<br>CIDR使用各种长度的“网络前缀”(network-prefix)来代替分类地址中的网络号和子网号。<br>IP 地址从三级编址（使用子网掩码）又回到了两级编址。<br>无分类的两级编址的记法是：<br>    IP地址 ::= {&lt;网络前缀&gt;, &lt;主机号&gt;}</p>
+<h3 id="地址块的分配"><a href="#地址块的分配" class="headerlink" title="地址块的分配"></a>地址块的分配</h3><p>CIDR 还使用“斜线记法”：<br>即在IP地址后面加上一个斜线“/”，后面写上网络前缀所占的比特数，如20.5.0.0/10，还可简写为 20.5/10<br>CIDR 将网络前缀相同的连续的 IP 地址组成“CIDR地址块”。  </p>
+<h3 id="路由聚合技术"><a href="#路由聚合技术" class="headerlink" title="路由聚合技术"></a>路由聚合技术</h3><p>一个 CIDR 地址块可以表示很多地址，这种地址的聚合常称为路由聚合(route aggregation) ，它使得路由表中的一个项目可以表示很多个（例如上千个）原来传统分类地址的路由。</p>
+<h3 id="最长前缀匹配"><a href="#最长前缀匹配" class="headerlink" title="最长前缀匹配"></a>最长前缀匹配</h3><p>路由表中的每个项目由“网络前缀/掩码”和“下一跳地址”组成。<br>在查找路由表时可能会得到不止一个匹配结果。<br>应当从匹配结果中选择具有最长网络前缀的路由：最长前缀匹配(longest-prefix matching)。<br>网络前缀越长，其地址块就越小，因而路由就越具体。    </p>
+<h2 id="路由选择协议"><a href="#路由选择协议" class="headerlink" title="路由选择协议"></a>路由选择协议</h2><p>因特网有两大类路由选择协议：<br>内部网关协议（<strong>IGP</strong>,Interior Gateway Protocol）即在一个自治系统内部使用的路由选择协议。目前这类路由选择协议使用得最多，如<strong> RIP 和 OSPF 协议</strong>。<br>外部网关协议（<strong>EGP</strong>,External Gateway Protocol）即在<u>自治系统之间</u>交换网络可达性信息所用的路由选择协议。在外部网关协议中目前使用最多的是 <strong>BGP-4</strong>。</p>
+<h2 id="路由器的组成部分和原理"><a href="#路由器的组成部分和原理" class="headerlink" title="路由器的组成部分和原理"></a>路由器的组成部分和原理</h2><h2 id="IP发展技术（IP多播、移动IP、VPN、NAT）"><a href="#IP发展技术（IP多播、移动IP、VPN、NAT）" class="headerlink" title="IP发展技术（IP多播、移动IP、VPN、NAT）"></a>IP发展技术（IP多播、移动IP、VPN、NAT）</h2><h2 id="IPv6（地址特点、报文格式、地址表示、地址种类、与IPv4的过渡方法）"><a href="#IPv6（地址特点、报文格式、地址表示、地址种类、与IPv4的过渡方法）" class="headerlink" title="IPv6（地址特点、报文格式、地址表示、地址种类、与IPv4的过渡方法）"></a>IPv6（地址特点、报文格式、地址表示、地址种类、与IPv4的过渡方法）</h2>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机网络/" rel="tag">#计算机网络</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/15/college_life_2/" rel="next" title="在大学（三）">
+                <i class="fa fa-chevron-left"></i> 在大学（三）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/16/college_life_3/" rel="prev" title="在大学（四）">
+                在大学（四） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/16/web_connect_layer/"
+           data-title="网络层与网络互连" data-url="http://yoursite.com/2016/06/16/web_connect_layer/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/head_img.png"
+               alt="Junifer" />
+          <p class="site-author-name" itemprop="name">Junifer</p>
+          <p class="site-description motion-element" itemprop="description">诗和远方</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yuan0" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friends
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://shenyizhou.github.io/" title="Orion" target="_blank">Orion</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.importcjj.com" title="Signal" target="_blank">Signal</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhicongchen.github.io/" title="Let there be light" target="_blank">Let there be light</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IP地址"><span class="nav-number">1.</span> <span class="nav-text">IP地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">1.1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP地址和硬件地址的联系与区别"><span class="nav-number">1.2.</span> <span class="nav-text">IP地址和硬件地址的联系与区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP数据报格式"><span class="nav-number">1.3.</span> <span class="nav-text">IP数据报格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP数据报分片原理与计算"><span class="nav-number">1.4.</span> <span class="nav-text">IP数据报分片原理与计算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#因特网控制报文协议ICMP及其应用"><span class="nav-number">2.</span> <span class="nav-text">因特网控制报文协议ICMP及其应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#划分子网的计算过程和步骤"><span class="nav-number">3.</span> <span class="nav-text">划分子网的计算过程和步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CIDR原理、地址块的分配、路由聚合技术，以及最长前缀匹配"><span class="nav-number">4.</span> <span class="nav-text">CIDR原理、地址块的分配、路由聚合技术，以及最长前缀匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CIDR原理"><span class="nav-number">4.1.</span> <span class="nav-text">CIDR原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#地址块的分配"><span class="nav-number">4.2.</span> <span class="nav-text">地址块的分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由聚合技术"><span class="nav-number">4.3.</span> <span class="nav-text">路由聚合技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最长前缀匹配"><span class="nav-number">4.4.</span> <span class="nav-text">最长前缀匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由选择协议"><span class="nav-number">5.</span> <span class="nav-text">路由选择协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由器的组成部分和原理"><span class="nav-number">6.</span> <span class="nav-text">路由器的组成部分和原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP发展技术（IP多播、移动IP、VPN、NAT）"><span class="nav-number">7.</span> <span class="nav-text">IP发展技术（IP多播、移动IP、VPN、NAT）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPv6（地址特点、报文格式、地址表示、地址种类、与IPv4的过渡方法）"><span class="nav-number">8.</span> <span class="nav-text">IPv6（地址特点、报文格式、地址表示、地址种类、与IPv4的过渡方法）</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junifer</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"oo1994"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
