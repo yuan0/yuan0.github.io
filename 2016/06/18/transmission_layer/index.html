@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="随笔,漫画," />
+  <meta name="keywords" content="计算机网络," />
 
 
 
@@ -84,18 +84,19 @@
 
 
 
-<meta name="description" content="尝试用ps画了一下还算顺手吧">
+<meta name="description" content="传输层的功能在通信子网提供的服务的基础上，为应用层提供有效的、合理的传输服务。
+端口传输层的UDP和TCP都使用了端口（port）与上层的应用进程进行通信，端口就是传输层服务访问点 TSAP（也就是与应用进程的接口）端口的作用就是让应用层的各种应用进程都能将其数据通过端口向下交付给传输层，以及让传输层知道应当将其报文段中的数据向上通过端口交付给应用层相应的进程。端口是应用层进程的标识。常用应用进程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在大学（四）">
-<meta property="og:url" content="http://yoursite.com/2016/06/16/college_life_3/index.html">
+<meta property="og:title" content="传输层(未完)">
+<meta property="og:url" content="http://yoursite.com/2016/06/18/transmission_layer/index.html">
 <meta property="og:site_name" content="Hello :)">
-<meta property="og:description" content="尝试用ps画了一下还算顺手吧">
-<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/male.jpg">
-<meta property="og:updated_time" content="2016-06-16T10:13:13.732Z">
+<meta property="og:description" content="传输层的功能在通信子网提供的服务的基础上，为应用层提供有效的、合理的传输服务。
+端口传输层的UDP和TCP都使用了端口（port）与上层的应用进程进行通信，端口就是传输层服务访问点 TSAP（也就是与应用进程的接口）端口的作用就是让应用层的各种应用进程都能将其数据通过端口向下交付给传输层，以及让传输层知道应当将其报文段中的数据向上通过端口交付给应用层相应的进程。端口是应用层进程的标识。常用应用进程">
+<meta property="og:updated_time" content="2016-06-26T05:41:55.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在大学（四）">
-<meta name="twitter:description" content="尝试用ps画了一下还算顺手吧">
-<meta name="twitter:image" content="http://o6yn3s5sy.bkt.clouddn.com/male.jpg">
+<meta name="twitter:title" content="传输层(未完)">
+<meta name="twitter:description" content="传输层的功能在通信子网提供的服务的基础上，为应用层提供有效的、合理的传输服务。
+端口传输层的UDP和TCP都使用了端口（port）与上层的应用进程进行通信，端口就是传输层服务访问点 TSAP（也就是与应用进程的接口）端口的作用就是让应用层的各种应用进程都能将其数据通过端口向下交付给传输层，以及让传输层知道应当将其报文段中的数据向上通过端口交付给应用层相应的进程。端口是应用层进程的标识。常用应用进程">
 
 
 
@@ -113,7 +114,7 @@
   };
 </script>
 
-  <title> 在大学（四） | Hello :) </title>
+  <title> 传输层(未完) | Hello :) </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +264,7 @@
             
             
               
-                在大学（四）
+                传输层(未完)
               
             
           </h1>
@@ -275,8 +276,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-16T18:08:33+08:00" content="2016-06-16">
-              2016-06-16
+            <time itemprop="dateCreated" datetime="2016-06-18T10:31:11+08:00" content="2016-06-18">
+              2016-06-18
             </time>
           </span>
 
@@ -289,8 +290,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
                   </a>
                 </span>
 
@@ -305,8 +306,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/16/college_life_3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/16/college_life_3/" itemprop="commentsCount"></span>
+                <a href="/2016/06/18/transmission_layer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/18/transmission_layer/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -329,11 +330,32 @@
       
 
       
-        <p>尝试用ps画了一下<br>还算顺手吧</p>
+        <h2 id="传输层的功能"><a href="#传输层的功能" class="headerlink" title="传输层的功能"></a>传输层的功能</h2><p>在通信子网提供的服务的基础上，为应用层提供有效的、合理的传输服务。</p>
+<h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>传输层的UDP和TCP都使用了<strong>端口</strong>（port）与上层的应用进程进行通信，<strong>端口</strong>就是传输层服务访问点 TSAP（也就是与应用进程的接口）<br>端口的作用就是让应用层的各种应用进程都能将其数据通过端口向下交付给传输层，以及让传输层知道应当将其报文段中的数据向上通过端口交付给应用层相应的进程。<u>端口是应用层进程的标识。</u><br>常用应用进程默认的端口:</p>
+<ul>
+<li>FTP（TCP/21）  </li>
+<li>SMTP（TCP/25） </li>
+<li>Telnet（TCP/23） </li>
+<li>HTTP（TCP/80）</li>
+<li>DNS协议(UDP/53)          </li>
+<li>DHCP协议（UDP/67）    </li>
+</ul>
 <a id="more"></a>
-<hr>
-<p><img src="http://o6yn3s5sy.bkt.clouddn.com/male.jpg" alt="太久不画画了"></p>
-
+<h2 id="套接字"><a href="#套接字" class="headerlink" title="套接字"></a>套接字</h2><p>UDP 和 TCP 使用 “端口号”作为计算机系统中高层应用进程的标识，而<u>IP地址则标识了网络中的一台主机</u>， <strong>IP地址和端口号</strong>的组合称为套接字。<br>套接字= <ip地址，端口></ip地址，端口></p>
+<h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>UDP是一个简单的面向用户数据报的传输层协议。</p>
+<ul>
+<li>无连接的</li>
+<li>提供不可靠的服务</li>
+<li>同时支持点到点和多点之间的通信</li>
+<li>是面向报文的</li>
+</ul>
+<h3 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h3><h3 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h3><h3 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h3><h2 id="TCP（基本概念、报文格式、可靠传输、连接管理、流量控制、拥塞控制）"><a href="#TCP（基本概念、报文格式、可靠传输、连接管理、流量控制、拥塞控制）" class="headerlink" title="TCP（基本概念、报文格式、可靠传输、连接管理、流量控制、拥塞控制）"></a>TCP（基本概念、报文格式、可靠传输、连接管理、流量控制、拥塞控制）</h2><h3 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li>面向连接的</li>
+<li>提供可靠的服务</li>
+<li>只能进行点到点的通信</li>
+<li>是面向字节流的</li>
+</ul>
+<h3 id="报文格式-1"><a href="#报文格式-1" class="headerlink" title="报文格式"></a>报文格式</h3><h3 id="可靠传输"><a href="#可靠传输" class="headerlink" title="可靠传输"></a>可靠传输</h3><h3 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h3><h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3>
       
     </div>
 
@@ -354,9 +376,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag">#随笔</a>
-          
-            <a href="/tags/漫画/" rel="tag">#漫画</a>
+            <a href="/tags/计算机网络/" rel="tag">#计算机网络</a>
           
         </div>
       
@@ -365,17 +385,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/15/college_life_2/" rel="next" title="在大学（三）">
-                <i class="fa fa-chevron-left"></i> 在大学（三）
+              <a href="/2016/06/17/web_connect_layer/" rel="next" title="网络层与网络互连(未完)">
+                <i class="fa fa-chevron-left"></i> 网络层与网络互连(未完)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/17/web_connect_layer/" rel="prev" title="网络层与网络互连(未完)">
-                网络层与网络互连(未完) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -401,8 +417,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/16/college_life_3/"
-           data-title="在大学（四）" data-url="http://yoursite.com/2016/06/16/college_life_3/">
+      <div class="ds-thread" data-thread-key="2016/06/18/transmission_layer/"
+           data-title="传输层(未完)" data-url="http://yoursite.com/2016/06/18/transmission_layer/">
       </div>
     
   </div>
@@ -526,7 +542,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#传输层的功能"><span class="nav-number">1.</span> <span class="nav-text">传输层的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#端口"><span class="nav-number">2.</span> <span class="nav-text">端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#套接字"><span class="nav-number">3.</span> <span class="nav-text">套接字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP"><span class="nav-number">4.</span> <span class="nav-text">UDP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">4.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#报文格式"><span class="nav-number">4.2.</span> <span class="nav-text">报文格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#校验"><span class="nav-number">4.3.</span> <span class="nav-text">校验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算"><span class="nav-number">4.4.</span> <span class="nav-text">计算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP（基本概念、报文格式、可靠传输、连接管理、流量控制、拥塞控制）"><span class="nav-number">5.</span> <span class="nav-text">TCP（基本概念、报文格式、可靠传输、连接管理、流量控制、拥塞控制）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念-1"><span class="nav-number">5.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#报文格式-1"><span class="nav-number">5.2.</span> <span class="nav-text">报文格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可靠传输"><span class="nav-number">5.3.</span> <span class="nav-text">可靠传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接管理"><span class="nav-number">5.4.</span> <span class="nav-text">连接管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流量控制"><span class="nav-number">5.5.</span> <span class="nav-text">流量控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拥塞控制"><span class="nav-number">5.6.</span> <span class="nav-text">拥塞控制</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
