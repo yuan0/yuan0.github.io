@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="node.js,Web," />
 
 
 
@@ -84,15 +84,34 @@
 
 
 
-<meta name="description" content="诗和远方">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hello :)">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+<meta name="description" content="环境Node.js： 6.5.0
+Express： 4.14.1
+SQLite3: 3.9.2
+使用 ejs 模板引擎$ express -e blog
+app.js：启动文件，或者说入口文件
+package.json：存储着工程的信息及模块依赖，当在 dependencies 中添加依赖的模块时，运行 npm install ，npm 会检查当前目录下的 package.json，并自动安装所">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅学Express（一）">
+<meta property="og:url" content="http://yoursite.com/2017/03/03/lowexpress_1/index.html">
 <meta property="og:site_name" content="Hello :)">
-<meta property="og:description" content="诗和远方">
+<meta property="og:description" content="环境Node.js： 6.5.0
+Express： 4.14.1
+SQLite3: 3.9.2
+使用 ejs 模板引擎$ express -e blog
+app.js：启动文件，或者说入口文件
+package.json：存储着工程的信息及模块依赖，当在 dependencies 中添加依赖的模块时，运行 npm install ，npm 会检查当前目录下的 package.json，并自动安装所">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/express170303.png">
+<meta property="og:image" content="http://o6yn3s5sy.bkt.clouddn.com/express170303_1.jpg">
+<meta property="og:updated_time" content="2017-03-04T08:01:56.400Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello :)">
-<meta name="twitter:description" content="诗和远方">
+<meta name="twitter:title" content="浅学Express（一）">
+<meta name="twitter:description" content="环境Node.js： 6.5.0
+Express： 4.14.1
+SQLite3: 3.9.2
+使用 ejs 模板引擎$ express -e blog
+app.js：启动文件，或者说入口文件
+package.json：存储着工程的信息及模块依赖，当在 dependencies 中添加依赖的模块时，运行 npm install ，npm 会检查当前目录下的 package.json，并自动安装所">
+<meta name="twitter:image" content="http://o6yn3s5sy.bkt.clouddn.com/express170303.png">
 
 
 
@@ -110,7 +129,7 @@
   };
 </script>
 
-  <title> 归档 | Hello :) </title>
+  <title> 浅学Express（一） | Hello :) </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -131,7 +150,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -239,329 +258,172 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 28 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/29/Embedded_System_1/" itemprop="url">
-              
-                <span itemprop="name">嵌入式系统与开发(一)</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-29T21:18:34+08:00"
-              content="2016-05-29" >
-          05-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/26/Embedded_System/" itemprop="url">
-              
-                <span itemprop="name">嵌入式系统与开发(零)</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-26T22:16:34+08:00"
-              content="2016-05-26" >
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/14/ife_0/" itemprop="url">
-              
-                <span itemprop="name">百度前端学习第一阶段成果</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-14T00:07:14+08:00"
-              content="2016-05-14" >
-          05-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/13/college_life_1/" itemprop="url">
-              
-                <span itemprop="name">在大学（二）</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-13T23:41:24+08:00"
-              content="2016-05-13" >
-          05-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/12/statichtml/" itemprop="url">
-              
-                <span itemprop="name">hexo创建无模板的静态html</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-12T21:55:02+08:00"
-              content="2016-05-12" >
-          05-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/12/college_life_0/" itemprop="url">
-              
-                <span itemprop="name">在大学（一）</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-12T16:53:02+08:00"
-              content="2016-05-12" >
-          05-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/09/2016_05_09/" itemprop="url">
-              
-                <span itemprop="name">Hello，World!</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-09T20:14:02+08:00"
-              content="2016-05-09" >
-          05-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/09/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-09T00:38:21+08:00"
-              content="2016-05-09" >
-          05-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                浅学Express（一）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-03T18:35:21+08:00" content="2017-03-03">
+              2017-03-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/03/lowexpress_1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/03/lowexpress_1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>Node.js： 6.5.0</p>
+<p>Express： 4.14.1</p>
+<p>SQLite3: 3.9.2</p>
+<h2 id="使用-ejs-模板引擎"><a href="#使用-ejs-模板引擎" class="headerlink" title="使用 ejs 模板引擎"></a>使用 ejs 模板引擎</h2><p><code>$ express -e blog</code></p>
+<p>app.js：启动文件，或者说入口文件</p>
+<p>package.json：存储着工程的信息及模块依赖，当在 dependencies 中添加依赖的模块时，运行 npm install ，npm 会检查当前目录下的 package.json，并自动安装所有指定的模块</p>
+<p>node_modules：存放 package.json 中安装的模块，当你在 package.json 添加依赖的模块并安装后，存放在这个文件夹下</p>
+<p>public：存放 image、css、js 等文件</p>
+<p>routes：存放路由文件</p>
+<p>views：存放视图文件或者说模版文件</p>
+<p>bin：存放可执行文件</p>
+<h2 id="安装-Express"><a href="#安装-Express" class="headerlink" title="安装 Express"></a>安装 Express</h2><p><code>$ npm install express</code><br>express 4.x以后将express命令独立到 express-generator包中，所以想使用express初始化项目目录，可以npm install express-generator<br><code>$ npm install express-generator</code></p>
+<h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p><code>$ express hello</code><br><code>$ cd hello &amp;&amp; npm install</code></p>
+<p>然后运行</p>
+<p><code>$ DEBUG=blog:* npm start</code></p>
+<p>结果这里卡住了<br>设置一下镜像服务</p>
+<p><code>$ npm config set registry &quot;http://registry.npmjs.org/&quot;</code></p>
+<p>重新运行</p>
+<p><code>$ npm start</code></p>
+<p>然后就可以跑了</p>
+<p><img src="http://o6yn3s5sy.bkt.clouddn.com/express170303.png" alt=""><br><img src="http://o6yn3s5sy.bkt.clouddn.com/express170303_1.jpg" alt=""></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/node-js-Web/" rel="tag">#node.js,Web</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/03/lowexpress/" rel="next" title="浅学Express（〇）">
+                <i class="fa fa-chevron-left"></i> 浅学Express（〇）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/22/difme_0/" rel="prev" title="瞳孔模拟设计">
+                瞳孔模拟设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -569,6 +431,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/03/lowexpress_1/"
+           data-title="浅学Express（一）" data-url="http://yoursite.com/2017/03/03/lowexpress_1/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -588,8 +458,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/head_img.png"
@@ -672,6 +551,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-ejs-模板引擎"><span class="nav-number">2.</span> <span class="nav-text">使用 ejs 模板引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Express"><span class="nav-number">3.</span> <span class="nav-text">安装 Express</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建项目"><span class="nav-number">4.</span> <span class="nav-text">新建项目</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -775,11 +665,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
